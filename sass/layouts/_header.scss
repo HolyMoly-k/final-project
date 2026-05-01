@@ -1,0 +1,94 @@
+.header {
+    padding: 32px;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo, .navigation, .nav-list, .login-list {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 108%;
+    letter-spacing: 0.02em;
+    color: #4ba586;
+    gap: 8px;
+}
+
+.nav-list {
+    gap: 48px;
+    margin-right: 32px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 144%;
+    letter-spacing: 0.03em
+}
+
+.nav-list li a{
+    display: inline-block;
+    color: #8e8e8e;
+    position: relative;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    
+}
+
+.nav-list li a::after{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #69b99d;
+    border-radius: 100%;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.nav-list li a:hover {
+    transform: translateY(-10px);
+    color: #69b99d;
+}
+
+.nav-list li a:hover::after {
+    opacity: 1;
+}
+
+.login-list {
+    gap: 8px;
+}
+
+.login-list li a{
+    padding: 16px 48px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.login-list-sign {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0em;
+    color: #69b99d;
+}
+
+.login-list-login {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0em;
+    color: #ffffff;
+    background-color: #69b99d;
+}
+
+.login-list li a:hover{
+    background-color: #498d75;
+    color: white;
+}
