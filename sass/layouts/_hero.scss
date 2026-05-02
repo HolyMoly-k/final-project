@@ -3,8 +3,8 @@
 .hero-section {
     padding-top: 77px;
     padding-bottom: 108px;
-    background-color: $background;
-    background-image: url(../../img/hero-section/hero-background.webp);
+    background-color: $main-color-and-background;
+    background-image: url(../img/hero-section/hero-background.webp);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 1000px;
@@ -41,11 +41,16 @@
         padding: 12px 32px;
         font-weight: 500;
         font-size: 24px;
-        background-color: $background;
+        background-color: $main-color-and-background;
         color: $text-color;
+        transition: color 0.2s linear;
 
         &.hero-buy-button {
             background-color: white;
+            color: $main-color;
+        }
+
+        &:hover {
             color: $main-color;
         }
     }
@@ -70,7 +75,7 @@
 
         select {
             appearance: none;
-            background-image: url('../../img/icons/Arrow-Down.png');
+            background-image: url('../img/icons/arrow-down.png');
             background-repeat: no-repeat;
             background-size: 24px;
             background-position: right;

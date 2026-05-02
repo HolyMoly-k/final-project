@@ -1,0 +1,104 @@
+@import '../utils/variables';
+
+.discover-section {
+    padding-top: 120px;
+}
+
+.discover-text-starter {
+    display: inline-block;
+    color: $main-color;
+    font-size: 18px;
+    background-color: $main-color-and-background;
+    padding: 12px 24px;
+}
+
+.discover-title {
+    font-size: 48px;
+    color: $titles-color;
+    margin-top: 16px;
+}
+
+.discover-text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .learn-more-link {
+        display: flex;
+        align-items: center;
+        color: $main-color;
+        gap: 8px;
+        transition: transform 0.2s linear;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .discover-description {
+        font-size: 16px;
+        color: $text-color;
+        width: 500px;
+        margin-top: 16px;
+    }
+}
+
+.discover-list {
+    display: flex;
+    gap: 34px;
+    margin-top: 48px;
+
+    li {
+        padding: 16px;
+        border: 1px solid #dedcda;
+
+        .discover-list-item-title {
+            font-size: 24px;
+            color: $titles-color;
+            margin-top: 16px;
+        }
+
+        .discover-list-description {
+            font-size: 16px;
+            color: $text-color;
+            margin-top: 8px;
+        }
+
+        .discover-money-area-group {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-top: 16px;
+
+            .discover-list-item-price {
+                color: $main-color;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .discover-list-item-area {
+                font-size: 16px;
+            }
+
+            .discover-list-item-area span {
+                color: $text-color;
+            }
+        }
+
+        .discover-list-item-button {
+            display: flex;
+            justify-content: center;
+            color: $main-color;
+            margin-top: 24px;
+            border: 1px solid $main-color;
+            padding: 12px;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+            &:hover {
+                background-color: $main-color;
+                color: white;
+                box-shadow: 0 0 8px $main-color;
+            }
+        }
+    }
+}

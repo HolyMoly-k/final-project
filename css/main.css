@@ -127,7 +127,7 @@ button:hover {
   padding-top: 77px;
   padding-bottom: 108px;
   background-color: #f5f5f5;
-  background-image: url(../../img/hero-section/hero-background.webp);
+  background-image: url(../img/hero-section/hero-background.webp);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 1000px;
@@ -166,9 +166,13 @@ button:hover {
   font-size: 24px;
   background-color: #f5f5f5;
   color: #73788c;
+  transition: color 0.2s linear;
 }
 .hero-button-list button.hero-buy-button {
   background-color: white;
+  color: #69b99d;
+}
+.hero-button-list button:hover {
   color: #69b99d;
 }
 
@@ -192,7 +196,7 @@ button:hover {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-image: url("../../img/icons/Arrow-Down.png");
+  background-image: url("../img/icons/arrow-down.png");
   background-repeat: no-repeat;
   background-size: 24px;
   background-position: right;
@@ -218,4 +222,95 @@ button:hover {
   padding: 0 20px;
   width: 1240px;
   margin: 0 auto;
+}
+
+.discover-section {
+  padding-top: 120px;
+}
+
+.discover-text-starter {
+  display: inline-block;
+  color: #69b99d;
+  font-size: 18px;
+  background-color: #f5f5f5;
+  padding: 12px 24px;
+}
+
+.discover-title {
+  font-size: 48px;
+  color: #1f2744;
+  margin-top: 16px;
+}
+
+.discover-text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.discover-text-wrapper .learn-more-link {
+  display: flex;
+  align-items: center;
+  color: #69b99d;
+  gap: 8px;
+  transition: transform 0.2s linear;
+}
+.discover-text-wrapper .learn-more-link:hover {
+  transform: scale(1.1);
+}
+.discover-text-wrapper .discover-description {
+  font-size: 16px;
+  color: #73788c;
+  width: 500px;
+  margin-top: 16px;
+}
+
+.discover-list {
+  display: flex;
+  gap: 34px;
+  margin-top: 48px;
+}
+.discover-list li {
+  padding: 16px;
+  border: 1px solid #dedcda;
+}
+.discover-list li .discover-list-item-title {
+  font-size: 24px;
+  color: #1f2744;
+  margin-top: 16px;
+}
+.discover-list li .discover-list-description {
+  font-size: 16px;
+  color: #73788c;
+  margin-top: 8px;
+}
+.discover-list li .discover-money-area-group {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 16px;
+}
+.discover-list li .discover-money-area-group .discover-list-item-price {
+  color: #69b99d;
+  font-size: 24px;
+  font-weight: 600;
+}
+.discover-list li .discover-money-area-group .discover-list-item-area {
+  font-size: 16px;
+}
+.discover-list li .discover-money-area-group .discover-list-item-area span {
+  color: #73788c;
+}
+.discover-list li .discover-list-item-button {
+  display: flex;
+  justify-content: center;
+  color: #69b99d;
+  margin-top: 24px;
+  border: 1px solid #69b99d;
+  padding: 12px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.discover-list li .discover-list-item-button:hover {
+  background-color: #69b99d;
+  color: white;
+  box-shadow: 0 0 8px #69b99d;
 }/*# sourceMappingURL=main.css.map */
