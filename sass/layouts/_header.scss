@@ -1,6 +1,9 @@
+@import '../utils/variables';
+
 .header {
     padding: 32px;
-}
+    background: $background;
+}   
 
 .header-wrapper {
     display: flex;
@@ -18,7 +21,7 @@
     font-size: 24px;
     line-height: 108%;
     letter-spacing: 0.02em;
-    color: #4ba586;
+    color: $main-color;
     gap: 8px;
 }
 
@@ -33,7 +36,7 @@
 
 .nav-list li a{
     display: inline-block;
-    color: #8e8e8e;
+    color: $text-color;
     position: relative;
     transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
     
@@ -44,7 +47,7 @@
     position: absolute;
     width: 6px;
     height: 6px;
-    background-color: #69b99d;
+    background-color: $main-color;
     border-radius: 100%;
     bottom: -50%;
     left: 50%;
@@ -55,7 +58,7 @@
 
 .nav-list li a:hover {
     transform: translateY(-10px);
-    color: #69b99d;
+    color: $main-color;
 }
 
 .nav-list li a:hover::after {
@@ -76,7 +79,7 @@
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0em;
-    color: #69b99d;
+    color: $main-color;
 }
 
 .login-list-login {
@@ -85,10 +88,10 @@
     line-height: 150%;
     letter-spacing: 0em;
     color: #ffffff;
-    background-color: #69b99d;
+    background-color: $main-color;
 }
 
 .login-list li a:hover{
-    background-color: #498d75;
+    background-color: #4b997e;
     color: white;
 }

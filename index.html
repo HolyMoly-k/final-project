@@ -56,20 +56,20 @@
     <main>
       <section class="hero-section" id="hero-section">
         <div class="container">
-          <p>REAL ESTATE</p>
-          <h1>Let's hunt for your dream residence</h1>
-          <p>
+          <p class="hero-text-starter">REAL ESTATE</p>
+          <h1 class="hero-title">Let's hunt for your dream residence</h1>
+          <p class="hero-description">
             Explore our range of beautiful properties with the addition of
             separate accommodation suitable for you.
           </p>
           <ul class="hero-button-list">
-            <button>Buy</button>
-            <button>Rent</button>
+            <li><button class="hero-buy-button">Buy</button></li>
+            <li><button>Rent</button></li>
           </ul>
-          <form action="">
+          <form class="hero-form" action="#">
             <div class="hero-form-wrapper">
               <label for="location">Location</label>
-              <select name="location" id="location">
+              <select name="location" id="location" class="select-place">
                 <option value="bogor">Bogor, Jawa Barat</option>
                 <option value="london">London, England</option>
                 <option value="paris">Paris, France</option>
@@ -77,7 +77,7 @@
             </div>
             <div class="hero-form-wrapper">
               <label for="type">Type</label>
-              <select name="type" id="type">
+              <select name="type" id="type" class="select-type">
                 <option value="home">Home</option>
                 <option value="apartament">Apartament</option>
                 <option value="villa">Villa</option>
@@ -85,13 +85,13 @@
             </div>
             <div class="hero-form-wrapper">
               <label for="price">Price Range</label>
-              <select name="price" id="price">
+              <select name="price" id="price" class="select-price">
                 <option value="200-350">$200-$350</option>
                 <option value="350-500">$350-$500</option>
                 <option value="500+">$500+</option>
               </select>
             </div>
-            <button type="submit">Search</button>
+            <button type="submit" class="hero-form-button">Search</button>
           </form>
         </div>
       </section>
@@ -238,10 +238,10 @@
             <div class="footer-first-column">
                 <a href="#" class="logo"><img src="./img/icons/main-icon.png" alt="icon.png" width="40" height="40"/>Mulih</a>
                 <p>We have built our reputation as true local area experts.</p>
-                <form action="">
-                    <label for="email">Newsletter</label>
-                    <div footer-form-wrapper>
-                        <input name="email" type="email" placeholder="Input your email">
+                <form action="#">
+                    <label for="email-input">Newsletter</label>
+                    <div class="footer-form-wrapper">
+                        <input name="email-input" type="email" placeholder="Input your email">
                         <button type="submit">Send</button>
                     </div>
                 </form>

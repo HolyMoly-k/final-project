@@ -1,0 +1,97 @@
+@import '../utils/variables';
+
+.hero-section {
+    padding-top: 77px;
+    padding-bottom: 108px;
+    background-color: $background;
+    background-image: url(../../img/hero-section/hero-background.webp);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1000px;
+}
+
+.hero-text-starter {
+    display: inline-block;
+    color: $main-color;
+    font-size: 18px;
+    background-color: white;
+    padding: 12px 24px;
+}
+
+.hero-title {
+    margin-top: 32px;
+    font-size: 64px;
+    color: $titles-color;
+    width: 600px;
+}
+
+.hero-description {
+    font-size: 16px;
+    color: $text-color;
+    width: 550px;
+    margin-top: 24px;
+}
+
+.hero-button-list {
+    display: flex;
+    margin-top: 64px;
+
+    button {
+        border: none;
+        padding: 12px 32px;
+        font-weight: 500;
+        font-size: 24px;
+        background-color: $background;
+        color: $text-color;
+
+        &.hero-buy-button {
+            background-color: white;
+            color: $main-color;
+        }
+    }
+}
+
+.hero-form {
+    display: flex;
+    background-color: white;
+    padding: 32px;
+    width: 751px;
+    gap: 40px;
+
+    .hero-form-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 18px;
+
+        .select-type {
+            width: 86px;
+        }
+
+        select {
+            appearance: none;
+            background-image: url('../../img/icons/Arrow-Down.png');
+            background-repeat: no-repeat;
+            background-size: 24px;
+            background-position: right;
+            padding-right: 32px;
+            border: none;
+            color: $text-color;
+        }
+    }
+
+    .hero-form-button {
+        padding: 18px 48px;
+        font-size: 16px;
+        background-color: $main-color;
+        border: none;
+        color: white;
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+        &:hover {
+            background-color: #7ac9ad;;
+            transform: scale(1.1);
+        }
+    }
+}
+

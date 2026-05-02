@@ -24,8 +24,13 @@ h1, h2, h3 {
   font-family: "Rubik", sans-serif;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .header {
   padding: 32px;
+  background: #f5f5f5;
 }
 
 .header-wrapper {
@@ -44,7 +49,7 @@ h1, h2, h3 {
   font-size: 24px;
   line-height: 108%;
   letter-spacing: 0.02em;
-  color: #4ba586;
+  color: #69b99d;
   gap: 8px;
 }
 
@@ -59,7 +64,7 @@ h1, h2, h3 {
 
 .nav-list li a {
   display: inline-block;
-  color: #8e8e8e;
+  color: #73788c;
   position: relative;
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
@@ -114,8 +119,98 @@ h1, h2, h3 {
 }
 
 .login-list li a:hover {
-  background-color: #498d75;
+  background-color: #4b997e;
   color: white;
+}
+
+.hero-section {
+  padding-top: 77px;
+  padding-bottom: 108px;
+  background-color: #f5f5f5;
+  background-image: url(../../img/hero-section/hero-background.webp);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 1000px;
+}
+
+.hero-text-starter {
+  display: inline-block;
+  color: #69b99d;
+  font-size: 18px;
+  background-color: white;
+  padding: 12px 24px;
+}
+
+.hero-title {
+  margin-top: 32px;
+  font-size: 64px;
+  color: #1f2744;
+  width: 600px;
+}
+
+.hero-description {
+  font-size: 16px;
+  color: #73788c;
+  width: 550px;
+  margin-top: 24px;
+}
+
+.hero-button-list {
+  display: flex;
+  margin-top: 64px;
+}
+.hero-button-list button {
+  border: none;
+  padding: 12px 32px;
+  font-weight: 500;
+  font-size: 24px;
+  background-color: #f5f5f5;
+  color: #73788c;
+}
+.hero-button-list button.hero-buy-button {
+  background-color: white;
+  color: #69b99d;
+}
+
+.hero-form {
+  display: flex;
+  background-color: white;
+  padding: 32px;
+  width: 751px;
+  gap: 40px;
+}
+.hero-form .hero-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 18px;
+}
+.hero-form .hero-form-wrapper .select-type {
+  width: 86px;
+}
+.hero-form .hero-form-wrapper select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("../../img/icons/Arrow-Down.png");
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: right;
+  padding-right: 32px;
+  border: none;
+  color: #73788c;
+}
+.hero-form .hero-form-button {
+  padding: 18px 48px;
+  font-size: 16px;
+  background-color: #69b99d;
+  border: none;
+  color: white;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.hero-form .hero-form-button:hover {
+  background-color: #7ac9ad;
+  transform: scale(1.1);
 }
 
 .container {
