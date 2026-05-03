@@ -4,7 +4,7 @@
     padding-top: 77px;
     padding-bottom: 108px;
     background-color: $main-color-and-background;
-    background-image: url(../img/hero-section/hero-background.webp);
+    background-image: url('../../img/hero-section/hero-background.webp');
     background-repeat: no-repeat;
     background-position: right;
     background-size: 1000px;
@@ -75,7 +75,7 @@
 
         select {
             appearance: none;
-            background-image: url('../img/icons/arrow-down.png');
+            background-image: url('../../img/icons/arrow-down.png');
             background-repeat: no-repeat;
             background-size: 24px;
             background-position: right;
