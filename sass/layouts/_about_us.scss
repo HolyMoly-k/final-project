@@ -1,0 +1,114 @@
+@import '../utils/variables';
+
+.about_us-section {
+    padding-top: 120px;
+}
+
+.about_image-wrapper {
+    position: relative;
+
+    .about_review-card {
+        position: absolute;
+        top: -20%;
+        left: 96px;
+        padding: 32px;
+        background-color: white;
+
+        .about_review-title {
+            font-weight: 400;
+            font-size: 72px;
+            color: $titles-color;
+            margin-top: 16px;
+        }
+
+        .about_review-description {
+            width: 110px;
+            text-align: center;
+            margin-top: 16px;
+            color: $text-color;
+            line-height: 150%;
+        }
+
+        .about_review-description-span {
+            color: $titles-color;
+        }
+
+        .about_image-checkmark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .about_rent-list {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 12px 32px;
+        gap: 32px;
+
+        li {
+            display: flex;
+            align-items: center;
+
+            h3 {
+                font-weight: 600;
+                font-size: 48px;
+                color: $titles-color;
+            }
+
+            p {
+                width: 72px;
+                color: $text-color;
+                margin-left: 8px;
+            }
+        }
+    }
+}
+
+.about_us-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+
+    .about_text-starter {
+        display: inline-block;
+        color: $main-color;
+        font-size: 18px;
+        background-color: $main-color-and-background;
+        padding: 12px 24px;
+    }
+
+    .about_us-title {
+        font-size: 48px;
+        color: $titles-color;
+        margin-top: 16px;
+    }
+
+    .about_us-description {
+        font-size: 16px;
+        color: $text-color;
+        line-height: 163%;
+        margin-top: 16px;
+    }
+
+    .about_us-link {
+        display: inline-block;
+        margin-top: 48px;
+        padding: 18px 48px;
+        color: rgb(255, 255, 255);
+        background-color: $main-color;
+        box-shadow: 24px 24px 65px 0 rgba(81, 140, 119, 0.24);
+        transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+        
+        &:hover {
+            background-color: #81d4b7;
+            box-shadow: 24px 24px 65px 0 rgba(102, 189, 158, 0.24);
+            transform: scale(1.05);
+        }
+
+    }
+}

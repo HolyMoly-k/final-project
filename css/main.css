@@ -258,6 +258,10 @@ button:hover {
 .discover-text-wrapper .learn-more-link:hover {
   transform: scale(1.1);
 }
+.discover-text-wrapper .learn-more-link .learn-more-link-image {
+  box-shadow: 0 0 20px 0 rgba(105, 185, 157, 0.58);
+  border-radius: 50%;
+}
 .discover-text-wrapper .discover-description {
   font-size: 16px;
   color: #73788c;
@@ -321,6 +325,7 @@ button:hover {
 .our_advante-section {
   background-color: #f5f5f5;
   padding-bottom: 80px;
+  padding-top: 80px;
 }
 
 .our_text-starter {
@@ -329,7 +334,6 @@ button:hover {
   font-size: 18px;
   background-color: white;
   padding: 12px 24px;
-  margin-top: 80px;
 }
 
 .our_advante-title {
@@ -361,4 +365,198 @@ button:hover {
   margin-top: 16px;
   width: 336px;
   line-height: 163%;
+}
+
+.about_us-section {
+  padding-top: 120px;
+}
+
+.about_image-wrapper {
+  position: relative;
+}
+.about_image-wrapper .about_review-card {
+  position: absolute;
+  top: -20%;
+  left: 96px;
+  padding: 32px;
+  background-color: white;
+}
+.about_image-wrapper .about_review-card .about_review-title {
+  font-weight: 400;
+  font-size: 72px;
+  color: #1f2744;
+  margin-top: 16px;
+}
+.about_image-wrapper .about_review-card .about_review-description {
+  width: 110px;
+  text-align: center;
+  margin-top: 16px;
+  color: #73788c;
+  line-height: 150%;
+}
+.about_image-wrapper .about_review-card .about_review-description-span {
+  color: #1f2744;
+}
+.about_image-wrapper .about_review-card .about_image-checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about_image-wrapper .about_rent-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 12px 32px;
+  gap: 32px;
+}
+.about_image-wrapper .about_rent-list li {
+  display: flex;
+  align-items: center;
+}
+.about_image-wrapper .about_rent-list li h3 {
+  font-weight: 600;
+  font-size: 48px;
+  color: #1f2744;
+}
+.about_image-wrapper .about_rent-list li p {
+  width: 72px;
+  color: #73788c;
+  margin-left: 8px;
+}
+
+.about_us-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+.about_us-wrapper .about_text-starter {
+  display: inline-block;
+  color: #69b99d;
+  font-size: 18px;
+  background-color: #f5f5f5;
+  padding: 12px 24px;
+}
+.about_us-wrapper .about_us-title {
+  font-size: 48px;
+  color: #1f2744;
+  margin-top: 16px;
+}
+.about_us-wrapper .about_us-description {
+  font-size: 16px;
+  color: #73788c;
+  line-height: 163%;
+  margin-top: 16px;
+}
+.about_us-wrapper .about_us-link {
+  display: inline-block;
+  margin-top: 48px;
+  padding: 18px 48px;
+  color: rgb(255, 255, 255);
+  background-color: #69b99d;
+  box-shadow: 24px 24px 65px 0 rgba(81, 140, 119, 0.24);
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.about_us-wrapper .about_us-link:hover {
+  background-color: #81d4b7;
+  box-shadow: 24px 24px 65px 0 rgba(102, 189, 158, 0.24);
+  transform: scale(1.05);
+}
+
+.customer_testimonial_section {
+  padding-top: 120px;
+}
+
+.customer_text-starter {
+  display: inline-block;
+  color: #69b99d;
+  font-size: 18px;
+  background-color: #f5f5f5;
+  padding: 12px 24px;
+}
+
+.customer-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.customer-title-wrapper .customer_title {
+  font-size: 48px;
+  color: #1f2744;
+  margin-top: 16px;
+}
+.customer-title-wrapper .learn-more-link {
+  display: flex;
+  align-items: center;
+  color: #69b99d;
+  gap: 8px;
+  transition: transform 0.2s linear;
+}
+.customer-title-wrapper .learn-more-link:hover {
+  transform: scale(1.1);
+}
+.customer-title-wrapper .learn-more-link .learn-more-link-image {
+  box-shadow: 0 0 20px 0 rgba(105, 185, 157, 0.58);
+  border-radius: 50%;
+}
+
+.customer-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+}
+.customer-list li {
+  width: 376px;
+  height: 350px;
+  padding: 24px;
+  padding-top: 82px;
+  border: 1px solid #dedcda;
+  position: relative;
+}
+.customer-list li::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: block;
+  width: 42px;
+  height: 34px;
+  background-image: url(.././img/customer-testimonial-section/after.svg);
+}
+.customer-list li h3 {
+  color: #1f2744;
+  font-weight: 600;
+  line-height: 156%;
+  width: 265px;
+}
+.customer-list li .customer_second-review-title {
+  width: 312px;
+}
+.customer-list li .customer-review-description {
+  color: #1f2744;
+  margin-top: 16px;
+  line-height: 150%;
+}
+.customer-list li .customer-list-review-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  gap: 14px;
+}
+.customer-list li .customer-list-review-wrapper .customer-list-review-name {
+  font-size: 16px;
+  line-height: 163%;
+  font-weight: 500;
+}
+.customer-list li .customer-list-review-wrapper .customer-list-review-job {
+  font-size: 12px;
+  color: #73788c;
+}
+.customer-list li .customer-list-review-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }/*# sourceMappingURL=main.css.map */

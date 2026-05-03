@@ -34,6 +34,11 @@
         &:hover {
             transform: scale(1.1);
         }
+
+        .learn-more-link-image {
+            box-shadow: 0 0 20px 0 rgba(105, 185, 157, 0.58);
+            border-radius: 50%;
+        }
     }
 
     .discover-description {
