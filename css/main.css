@@ -226,6 +226,7 @@ button:hover {
 
 .discover-section {
   padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .discover-text-starter {
@@ -296,6 +297,8 @@ button:hover {
 }
 .discover-list li .discover-money-area-group .discover-list-item-area {
   font-size: 16px;
+  background-color: #f5f5f5;
+  padding: 4px 8px;
 }
 .discover-list li .discover-money-area-group .discover-list-item-area span {
   color: #73788c;
@@ -313,4 +316,49 @@ button:hover {
   background-color: #69b99d;
   color: white;
   box-shadow: 0 0 8px #69b99d;
+}
+
+.our_advante-section {
+  background-color: #f5f5f5;
+  padding-bottom: 80px;
+}
+
+.our_text-starter {
+  display: inline-block;
+  color: #69b99d;
+  font-size: 18px;
+  background-color: white;
+  padding: 12px 24px;
+  margin-top: 80px;
+}
+
+.our_advante-title {
+  font-size: 48px;
+  color: #1f2744;
+  width: 436px;
+  margin-top: 16px;
+}
+
+.our_advante-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 48px;
+  gap: 32px;
+}
+.our_advante-list li {
+  width: 376px;
+}
+.our_advante-list li h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2744;
+  margin-top: 16px;
+}
+.our_advante-list li p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #73788c;
+  margin-top: 16px;
+  width: 336px;
+  line-height: 163%;
 }/*# sourceMappingURL=main.css.map */

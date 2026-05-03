@@ -1,0 +1,49 @@
+@import '../utils/variables';
+
+.our_advante-section {
+    background-color: $main-color-and-background;
+    padding-bottom: 80px;
+}
+
+.our_text-starter {
+    display: inline-block;
+    color: $main-color;
+    font-size: 18px;
+    background-color: white;
+    padding: 12px 24px;
+    margin-top: 80px;
+}
+
+.our_advante-title {
+    font-size: 48px;
+    color: $titles-color;
+    width: 436px;
+    margin-top: 16px;
+}
+
+.our_advante-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    gap: 32px;
+
+    li {
+        width: 376px;
+
+        h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: $titles-color;
+            margin-top: 16px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            color: $text-color;
+            margin-top: 16px;
+            width: 336px;
+            line-height: 163%;
+        }
+    }
+}
