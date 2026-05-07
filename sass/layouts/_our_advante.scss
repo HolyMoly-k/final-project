@@ -1,49 +1,145 @@
 @import '../utils/variables';
+@import '../utils/mixins';
 
 .our_advante-section {
     background-color: $main-color-and-background;
-    padding-bottom: 80px;
-    padding-top: 80px;
+    // padding-bottom: 80px;
+    // padding-top: 80px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    @include dekstop-screen {
+        & {
+            padding-bottom: 80px;
+            padding-top: 80px;
+        }
+    }
 }
 
 .our_text-starter {
     display: inline-block;
     color: $main-color;
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: 14px;
     background-color: white;
     padding: 12px 24px;
+
+    @include tablet-screen {
+        & {
+            font-size: 16px;
+        }
+    }
+
+    @include dekstop-screen {
+        & {
+            font-size: 18px;
+        }
+    }
 }
 
 .our_advante-title {
-    font-size: 48px;
+    // font-size: 48px;
+    font-size: 24px;
     color: $titles-color;
-    width: 436px;
+    // width: 436px;
+    width: 226px;
     margin-top: 16px;
+
+    @include tablet-screen {
+        & {
+            font-size: 30px;
+            width: 336px;
+        }
+    }
+
+    @include dekstop-screen {
+        & {
+            font-size: 48px;
+            width: 436px;
+        }
+    }
 }
 
 .our_advante-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     margin-top: 48px;
     gap: 32px;
 
+    @include dekstop-screen {
+        & {
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
     li {
-        width: 376px;
+        // width: 376px;
+        width: 276px;
+
+        @include dekstop-screen {
+            & {
+                width: 376px;
+            }
+        }
 
         h3 {
-            font-size: 28px;
+            // font-size: 28px;
+            font-size: 18px;
             font-weight: 700;
             color: $titles-color;
             margin-top: 16px;
+            text-align: center;
+
+            @include tablet-screen {
+                & {
+                    font-size: 23px;
+                }
+            }
+
+            @include dekstop-screen {
+                & {
+                    font-size: 28px;
+                    text-align: left;
+                }
+            }
         }
 
         p {
             font-weight: 400;
-            font-size: 16px;
+            font-size: 13px;
             color: $text-color;
             margin-top: 16px;
-            width: 336px;
+            // width: 336px;
+            width: 100%;
             line-height: 163%;
+            text-align: center;
+
+            @include tablet-screen {
+                & {
+                    font-size: 16px;
+                }
+            }
+
+            @include dekstop-screen {
+                & {
+                    width: 336px;
+                    text-align: left;
+                }
+            }
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+
+            @include dekstop-screen {
+                & {
+                    margin: 0;
+                }
+            }
         }
     }
 }

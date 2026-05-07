@@ -1,42 +1,153 @@
 @import '../utils/variables';
+@import '../utils/mixins';
 
 .about_us-section {
-    padding-top: 120px;
+    // padding-top: 120px;
+    padding-top: 60px;
+
+    @include tablet-screen {
+        & {
+            padding-top: 80px;
+        }
+    }
+
+    @include dekstop-screen {
+        & {
+            padding-top: 120px;
+        }
+    }
 }
 
 .about_image-wrapper {
     position: relative;
 
+    .about-main-image {
+        width: 270px;
+        height: 222px;
+
+        @include tablet-screen {
+            & {
+                width: 409px;
+                height: 319px;
+            }
+        }
+
+        @include dekstop-screen {
+            & {
+                width: 609px;
+                height: 475px;
+            }
+        }
+    }
+
     .about_review-card {
         position: absolute;
         top: -20%;
-        left: 96px;
-        padding: 32px;
+        left: 15%;
+        // padding: 32px;
+        padding: 15px;
         background-color: white;
+
+        @include tablet-screen {
+            & {
+                padding: 23px;
+            }
+        }
+
+        @include dekstop-screen {
+            & {
+                padding: 32px;
+            }
+        }
 
         .about_review-title {
             font-weight: 400;
-            font-size: 72px;
+            // font-size: 72px;
+            font-size: 32px;
             color: $titles-color;
             margin-top: 16px;
+
+            @include tablet-screen {
+                & {
+                    font-size: 52px;
+                    text-align: center;
+                }
+            }
+
+            @include dekstop-screen {
+                & {
+                    font-size: 72px;
+                    text-align: center;
+                }
+            }
         }
 
         .about_review-description {
-            width: 110px;
+            margin: 0 auto;
+            // width: 110px;
+            width: 55px;
+            font-size: 10px;
             text-align: center;
             margin-top: 16px;
             color: $text-color;
-            line-height: 150%;
+            // line-height: 150%;
+
+            @include tablet-screen {
+                & {
+                    font-size: 12px;
+                    width: 80px;
+                }
+            }
+
+            @include dekstop-screen {
+                & {
+                    font-size: 13px;
+                    text-align: center;
+                    line-height: 150%;
+                    width: 110px;
+                }
+            }
         }
 
         .about_review-description-span {
             color: $titles-color;
         }
 
-        .about_image-checkmark {
+        .about_image-checkmark-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            .about_image-checkmark {
+                width: 22px;
+                height: 22px;
+
+                @include dekstop-screen {
+                    & {
+                        width: 27px;
+                        height: 27px;
+                    }
+                }
+            }
+        }
+
+        .about_image-stars {
+            width: 46px;
+            height: 9px;
+
+            @include tablet-screen {
+                & {
+                    width: 76px;
+                    height: 13px;
+                }
+            }
+
+            @include dekstop-screen {
+                & {
+                    width: 106px;
+                    height: 18px;
+                }
+            }
         }
     }
 
@@ -47,8 +158,23 @@
         display: flex;
         align-items: center;
         background-color: white;
-        padding: 12px 32px;
-        gap: 32px;
+        // padding: 12px 32px;
+        padding: 6px 16px;
+        // gap: 32px;
+
+        @include tablet-screen {
+            & {
+                gap: 12px;
+                padding: 8px 23px;
+            }
+        }
+
+        @include dekstop-screen {
+            & {
+                padding: 12px 32px;
+                gap: 32px;
+            }
+        }
 
         li {
             display: flex;
@@ -56,14 +182,41 @@
 
             h3 {
                 font-weight: 600;
-                font-size: 48px;
+                // font-size: 48px;
+                font-size: 24px;
                 color: $titles-color;
+
+                @include tablet-screen {
+                    & {
+                        font-size: 30px;
+                    }
+                }
+
+                @include dekstop-screen {
+                    & {
+                        font-size: 48px;
+                    }
+                }
             }
 
             p {
-                width: 72px;
+                // width: 72px;
                 color: $text-color;
+                font-size: 10px;
                 margin-left: 8px;
+
+                @include tablet-screen {
+                    & {
+                        width: 62px;
+                    }
+                }
+
+                @include dekstop-screen {
+                    & {
+                        width: 72px;
+                        font-size: 13px;
+                    }
+                }
             }
         }
     }
@@ -72,37 +225,78 @@
 .about_us-wrapper {
     display: flex;
     align-items: center;
+    flex-direction: column-reverse;
     gap: 56px;
+
+    @include tablet-screen {
+        & {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
 
     .about_text-starter {
         display: inline-block;
         color: $main-color;
-        font-size: 18px;
+        // font-size: 18px;
+        font-size: 16px;
         background-color: $main-color-and-background;
         padding: 12px 24px;
+
+        @include dekstop-screen {
+            & {
+                font-size: 18px;
+            }
+        }
     }
 
     .about_us-title {
-        font-size: 48px;
+        // font-size: 48px;
+        font-size: 24px;
         color: $titles-color;
         margin-top: 16px;
+
+        @include dekstop-screen {
+            & {
+                font-size: 48px;
+            }
+        }
     }
 
     .about_us-description {
-        font-size: 16px;
+        // font-size: 16px;
+        font-size: 13px;
         color: $text-color;
         line-height: 163%;
         margin-top: 16px;
+
+        @include dekstop-screen {
+            & {
+                font-size: 16px;
+            }
+        }
     }
 
     .about_us-link {
         display: inline-block;
-        margin-top: 48px;
-        padding: 18px 48px;
+        // margin-top: 48px;
+        margin-top: 24px;
+        // padding: 18px 48px;
+        padding: 9px 24px;
+        // font-size: 16px;
+        font-size: 13px;
         color: rgb(255, 255, 255);
         background-color: $main-color;
         box-shadow: 24px 24px 65px 0 rgba(81, 140, 119, 0.24);
         transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+        @include dekstop-screen {
+            & {
+                margin-top: 48px;
+                padding: 18px 48px;
+                font-size: 16px;
+            }
+        }
         
         &:hover {
             background-color: #81d4b7;

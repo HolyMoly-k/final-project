@@ -1,46 +1,119 @@
 @import '../utils/variables';
+@import '../utils/mixins';
 
 .hero-section {
-    padding-top: 77px;
-    padding-bottom: 108px;
+    // padding-top: 77px;
+    padding-top: 22px;
+    // padding-bottom: 108px;
+    padding-bottom: 40px;
     background-color: $main-color-and-background;
     background-image: url('.././img/hero-section/hero-background.webp');
     background-repeat: no-repeat;
-    background-position: right;
-    background-size: 1000px;
+    background-position: bottom;
+    // background-size: 1000px;
+    background-size: 700px;
+}
+
+@include tablet-screen {
+    .hero-section {
+        padding-top: 42px;
+        background-position: right;
+        background-size: 600px;
+        padding-bottom: 80px;
+    }
+}
+
+@include dekstop-screen {
+    .hero-section {
+        padding-top: 77px;
+        padding-bottom: 108px;
+        background-size: 1000px;
+    }
 }
 
 .hero-text-starter {
     display: inline-block;
     color: $main-color;
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: 14px;
     background-color: white;
     padding: 12px 24px;
 }
 
-.hero-title {
-    margin-top: 32px;
-    font-size: 64px;
-    color: $titles-color;
-    width: 600px;
+@include tablet-screen {
+    .hero-text-starter {
+        font-size: 16px;
+    }
 }
 
+@include dekstop-screen {
+    .hero-text-starter {
+        font-size: 18px;
+    }
+}
+
+.hero-title {
+    margin-top: 32px;
+    // font-size: 64px;
+    font-size: 32px;
+    color: $titles-color;
+    // width: 600px;
+    width: 300px;
+}
+
+@include tablet-screen {
+    .hero-title {
+        font-size: 48px;
+        width: 450px;
+    }
+}
+
+@include dekstop-screen {
+    .hero-title {
+        font-size: 64px;
+        width: 600px;
+    }
+}
+
+
 .hero-description {
-    font-size: 16px;
+    // font-size: 16px;
+    font-size: 13px;
     color: $text-color;
-    width: 550px;
-    margin-top: 24px;
+    font-weight: 600;
+    // width: 550px;
+    width: 250px;
+    // margin-top: 24px;
+    margin-top: 10px;
+}
+
+@include tablet-screen {
+    .hero-description {
+        width: 350px;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+}
+
+@include dekstop-screen {
+    .hero-description {
+        font-size: 16px;
+        width: 550px;
+        margin-top: 24px;
+    }
 }
 
 .hero-button-list {
     display: flex;
-    margin-top: 64px;
+    // margin-top: 64px;
+    margin-top: 32px;
 
     button {
         border: none;
         padding: 12px 32px;
         font-weight: 500;
-        font-size: 24px;
+        // font-size: 24px;
+        font-size: 18px;
         background-color: $main-color-and-background;
         color: $text-color;
         transition: color 0.2s linear;
@@ -56,11 +129,32 @@
     }
 }
 
+@include tablet-screen {
+    .hero-button-list {
+        margin-top: 48px;
+
+        button {
+            font-size: 20px;
+        }
+    }
+}
+
+@include dekstop-screen {
+    .hero-button-list {
+        margin-top: 64px;
+
+        button {
+            font-size: 24px;
+        }
+    }
+}
+
 .hero-form {
     display: flex;
+    flex-direction: column;
     background-color: white;
     padding: 32px;
-    width: 751px;
+    // width: 751px;
     gap: 40px;
 
     .hero-form-wrapper {
@@ -82,11 +176,16 @@
             padding-right: 32px;
             border: none;
             color: $text-color;
+
+            &:focus {
+                outline: none;
+            }
         }
     }
 
     .hero-form-button {
         padding: 18px 48px;
+        width: 200px;
         font-size: 16px;
         background-color: $main-color;
         border: none;
@@ -97,6 +196,20 @@
             background-color: #7ac9ad;;
             transform: scale(1.1);
         }
+    }
+}
+
+@include tablet-screen {
+    .hero-form {
+        flex-direction: row;
+        width: 740px;
+    }
+}
+
+@include dekstop-screen {
+    .hero-form {
+        flex-direction: row;
+        width: 751px;
     }
 }
 

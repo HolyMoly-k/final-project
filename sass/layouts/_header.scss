@@ -1,14 +1,34 @@
 @import '../utils/variables';
+@import '../utils/mixins';
 
 .header {
-    padding: 32px;
+    // padding: 32px;
+    padding: 12px 0;
     background: $main-color-and-background;
-}   
+    position: sticky;
+    top: 0;
+}
+
+@include dekstop-screen {
+    .header {
+        padding: 32px 0;
+    }
+}
 
 .header-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    // align-items: center;
+    // justify-content: space-between;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@include tablet-screen {
+    .header-wrapper {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
 }
 
 .logo, .navigation, .nav-list, .login-list {
@@ -18,20 +38,52 @@
 
 .logo {
     font-weight: 500;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 108%;
     letter-spacing: 0.02em;
     color: $main-color;
     gap: 8px;
 }
 
+@include dekstop-screen {
+    .logo-image {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 .nav-list {
-    gap: 48px;
-    margin-right: 32px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    // gap: 48px;
+    gap: 24px;
+    // margin-right: 32px;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 144%;
+    font-size: 14px;
     letter-spacing: 0.03em
+}
+
+@include tablet-screen {
+    .nav-list {
+        margin-right: 12px;
+        overflow-x: visible;
+        overflow-y: visible;
+        white-space: normal;
+    }
+}
+
+@include dekstop-screen {
+    .nav-list {
+        gap: 48px;
+        margin-right: 32px;
+        font-size: 18px;
+    }
+}
+
+.nav-list::-webkit-scrollbar {
+  display: none;
 }
 
 .nav-list li a{
@@ -67,16 +119,35 @@
 
 .login-list {
     gap: 8px;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+
+@include tablet-screen {
+    .login-list {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
 }
 
 .login-list li a{
-    padding: 16px 48px;
+    // padding: 16px 48px;
+    padding: 8px 24px;
     transition: background-color 0.2s ease-in-out;
+}
+
+@include dekstop-screen {
+    .login-list li a {
+        padding: 16px 48px;
+    }
 }
 
 .login-list-sign {
     font-weight: 500;
-    font-size: 16px;
+    // font-size: 16px;
+    font-size: 12px;
     line-height: 150%;
     letter-spacing: 0em;
     color: $main-color;
@@ -84,11 +155,17 @@
 
 .login-list-login {
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 150%;
     letter-spacing: 0em;
     color: #ffffff;
     background-color: $main-color;
+}
+
+@include dekstop-screen {
+    .login-list-sign, .login-list-login {
+        font-size: 16px;
+    }
 }
 
 .login-list li a:hover{

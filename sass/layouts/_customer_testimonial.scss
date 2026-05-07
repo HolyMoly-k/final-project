@@ -1,26 +1,71 @@
 @import '../utils/variables';
+@import '../utils/mixins';
 
 .customer_testimonial_section {
-    padding: 120px 0;
+    // padding: 120px 0;
+    padding: 60px 0;
+
+    @include tablet-screen {
+        & {
+            padding: 90px 0;
+        }
+    }
+
+    @include dekstop-screen {
+        & {
+            padding: 120px 0;
+        }
+    }
 }
 
 .customer_text-starter {
     display: inline-block;
     color: $main-color;
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: 14px;
     background-color: $main-color-and-background;
     padding: 12px 24px;
+
+    @include tablet-screen {
+        & {
+            font-size: 16px;
+        }
+    }
+
+    @include dekstop-screen {
+        & {
+            font-size: 18px;
+        }
+    }
 }
 
 .customer-title-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    // align-items: center;
+    // justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+
+    @include tablet-screen {
+        & {
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 0;
+        }
+    }
 
     .customer_title {
-        font-size: 48px;
+        // font-size: 48px;
+        font-size: 24px;
         color: $titles-color;
-        margin-top: 16px;
+
+        @include dekstop-screen {
+            & {
+                font-size: 48px;
+            }
+        }
     }
 
     .learn-more-link {
@@ -29,6 +74,8 @@
         color: $main-color;
         gap: 8px;
         transition: transform 0.2s linear;
+        // font-size: 16px;
+        font-size: 13px;
 
         &:hover {
             transform: scale(1.1);
@@ -38,22 +85,45 @@
             box-shadow: 0 0 20px 0 rgba(105, 185, 157, 0.58);
             border-radius: 50%;
         }
+
+        @include dekstop-screen {
+            & {
+                font-size: 16px;
+            }
+        }
     }
 }
 
 .customer-list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 32px;
     margin-top: 48px;
 
+    @include dekstop-screen {
+        & {
+            flex-wrap: nowrap;
+        }
+    }
+
     li {
-        width: 376px;
+        // width: 376px;
+        // height: 350px;
+        width: 276px;
         height: 350px;
         padding: 24px;
         padding-top: 82px;
         border: 1px solid #dedcda;
         position: relative;
+
+        @include dekstop-screen {
+            & {
+                width: 376px;
+                height: 350px;
+            }
+        }
 
         &::after {
             content: "";
@@ -61,26 +131,47 @@
             top: 24px;
             left: 24px;
             display: block;
-            width: 42px;
-            height: 34px;
+            // width: 42px;
+            // height: 34px;
+            width: 32px;
+            height: 24px;
             background-image: url(.././img/customer-testimonial-section/after.svg);
+            background-size: cover;
+
+            @include dekstop-screen {
+                & {
+                    width: 42px;
+                    height: 34px;
+                }
+            }
         }
 
         h3 {
             color: $titles-color;
             font-weight: 600;
             line-height: 156%;
-            width: 265px;
-        }
+            width: 205px;
+            font-size: 15px;
 
-        .customer_second-review-title {
-            width: 312px;
+            @include dekstop-screen {
+                & {
+                    width: 285px;
+                    font-size: 18px;
+                }
+            }
         }
 
         .customer-review-description {
             color: $titles-color;
             margin-top: 16px;
             line-height: 150%;
+            font-size: 12px;
+
+            @include dekstop-screen {
+                & {
+                    font-size: 16px;
+                }
+            }
         }
 
         .customer-list-review-wrapper {
