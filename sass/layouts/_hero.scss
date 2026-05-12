@@ -1,215 +1,310 @@
-@import '../utils/variables';
-@import '../utils/mixins';
+@import "../utils/variables";
+@import "../utils/mixins";
 
 .hero-section {
-    // padding-top: 77px;
-    padding-top: 22px;
-    // padding-bottom: 108px;
-    padding-bottom: 40px;
-    background-color: $main-color-and-background;
-    background-image: url('.././img/hero-section/hero-background.webp');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    // background-size: 1000px;
-    background-size: 700px;
+  // padding-top: 77px;
+  padding-top: 22px;
+  // padding-bottom: 108px;
+  padding-bottom: 40px;
+  background-color: $main-color-and-background;
+  background-image: url(".././img/hero-section/hero-background.webp");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  // background-size: 1000px;
+  background-size: 700px;
+  position: relative;
+}
+
+.hero-animation {
+  display: none;
+  position: absolute;
+  right: 20%;
+  bottom: 20%;
+  background-color: rgb(252, 72, 72);
+  padding: 25px 75px;
+  border-radius: 35px;
+  letter-spacing: 0.3em;
+  animation: action-animation 2s ease-in-out 0s infinite alternate running;
+
+  h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(255, 242, 242);
+
+    span {
+      color: white;
+      font-size: 35px;
+    }
+  }
+
+  @include tablet-screen {
+    & {
+      display: block;
+      padding: 15px 55px;
+      bottom: 50%;
+      right: 10%;
+      h3 {
+        font-size: 15px;
+
+        span {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  @include dekstop-screen {
+    & {
+      right: 15%;
+      bottom: 20%;
+      padding: 25px 75px;
+
+      h3 {
+        font-size: 30px;
+
+        span {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes action-animation {
+  0% {
+    box-shadow: 0 0 10px red;
+    transform: scale(1);
+    rotate: 10deg;
+  }
+
+  33% {
+    box-shadow: 0 0 16px red;
+    transform: scale(1.2);
+    rotate: -10deg;
+  }
+
+  66% {
+    box-shadow: 0 0 10px red;
+    transform: scale(1);
+  }
+
+  100% {
+    box-shadow: 0 0 10px red;
+    transform: scale(1);
+  }
 }
 
 @include tablet-screen {
-    .hero-section {
-        padding-top: 42px;
-        background-position: right;
-        background-size: 600px;
-        padding-bottom: 80px;
-    }
+  .hero-section {
+    padding-top: 42px;
+    background-position: right;
+    background-size: 600px;
+    padding-bottom: 80px;
+  }
 }
 
 @include dekstop-screen {
-    .hero-section {
-        padding-top: 77px;
-        padding-bottom: 108px;
-        background-size: 1000px;
-    }
+  .hero-section {
+    padding-top: 77px;
+    padding-bottom: 108px;
+    background-size: 1000px;
+  }
 }
 
 .hero-text-starter {
-    display: inline-block;
-    color: $main-color;
-    // font-size: 18px;
-    font-size: 14px;
-    background-color: white;
-    padding: 12px 24px;
+  display: inline-block;
+  color: $main-color;
+  // font-size: 18px;
+  font-size: 14px;
+  background-color: white;
+  padding: 12px 24px;
 }
 
 @include tablet-screen {
-    .hero-text-starter {
-        font-size: 16px;
-    }
+  .hero-text-starter {
+    font-size: 16px;
+  }
 }
 
 @include dekstop-screen {
-    .hero-text-starter {
-        font-size: 18px;
-    }
+  .hero-text-starter {
+    font-size: 18px;
+  }
 }
 
 .hero-title {
-    margin-top: 32px;
-    // font-size: 64px;
-    font-size: 32px;
-    color: $titles-color;
-    // width: 600px;
-    width: 300px;
+  margin-top: 32px;
+  // font-size: 64px;
+  font-size: 32px;
+  color: $titles-color;
+  // width: 600px;
+  width: 300px;
+  animation: tracking-in-expand 0.7s ease-in-out;
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
 }
 
 @include tablet-screen {
-    .hero-title {
-        font-size: 48px;
-        width: 450px;
-    }
+  .hero-title {
+    font-size: 48px;
+    width: 450px;
+  }
 }
 
 @include dekstop-screen {
-    .hero-title {
-        font-size: 64px;
-        width: 600px;
-    }
+  .hero-title {
+    font-size: 64px;
+    width: 600px;
+  }
 }
-
 
 .hero-description {
-    // font-size: 16px;
-    font-size: 13px;
-    color: $text-color;
-    font-weight: 600;
-    // width: 550px;
-    width: 250px;
-    // margin-top: 24px;
-    margin-top: 10px;
+  // font-size: 16px;
+  font-size: 13px;
+  color: $text-color;
+  font-weight: 600;
+  // width: 550px;
+  width: 250px;
+  // margin-top: 24px;
+  margin-top: 10px;
+  animation: tracking-in-expand 0.7s ease;
 }
 
 @include tablet-screen {
-    .hero-description {
-        width: 350px;
-        margin-top: 15px;
-        font-size: 14px;
-    }
+  .hero-description {
+    width: 350px;
+    margin-top: 15px;
+    font-size: 14px;
+  }
 }
 
 @include dekstop-screen {
-    .hero-description {
-        font-size: 16px;
-        width: 550px;
-        margin-top: 24px;
-    }
+  .hero-description {
+    font-size: 16px;
+    width: 550px;
+    margin-top: 24px;
+  }
 }
 
 .hero-button-list {
-    display: flex;
-    // margin-top: 64px;
-    margin-top: 32px;
+  display: flex;
+  // margin-top: 64px;
+  margin-top: 32px;
 
-    button {
-        border: none;
-        padding: 12px 32px;
-        font-weight: 500;
-        // font-size: 24px;
-        font-size: 18px;
-        background-color: $main-color-and-background;
-        color: $text-color;
-        transition: color 0.2s linear;
+  button {
+    border: none;
+    padding: 12px 32px;
+    font-weight: 500;
+    // font-size: 24px;
+    font-size: 18px;
+    background-color: $main-color-and-background;
+    color: $text-color;
+    transition: color 0.2s linear;
 
-        &.hero-buy-button {
-            background-color: white;
-            color: $main-color;
-        }
-
-        &:hover {
-            color: $main-color;
-        }
+    &.hero-buy-button {
+      background-color: white;
+      color: $main-color;
     }
+
+    &:hover {
+      color: $main-color;
+    }
+  }
 }
 
 @include tablet-screen {
-    .hero-button-list {
-        margin-top: 48px;
+  .hero-button-list {
+    margin-top: 48px;
 
-        button {
-            font-size: 20px;
-        }
+    button {
+      font-size: 20px;
     }
+  }
 }
 
 @include dekstop-screen {
-    .hero-button-list {
-        margin-top: 64px;
+  .hero-button-list {
+    margin-top: 64px;
 
-        button {
-            font-size: 24px;
-        }
+    button {
+      font-size: 24px;
     }
+  }
 }
 
 .hero-form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 32px;
+  // width: 751px;
+  gap: 40px;
+
+  .hero-form-wrapper {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    padding: 32px;
-    // width: 751px;
-    gap: 40px;
+    gap: 8px;
+    font-size: 18px;
 
-    .hero-form-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        font-size: 18px;
-
-        .select-type {
-            width: 86px;
-        }
-
-        select {
-            appearance: none;
-            background-image: url('.././img/icons/arrow-down-icon.png');
-            background-repeat: no-repeat;
-            background-size: 24px;
-            background-position: right;
-            padding-right: 32px;
-            border: none;
-            color: $text-color;
-
-            &:focus {
-                outline: none;
-            }
-        }
+    .select-type {
+      width: 86px;
     }
 
-    .hero-form-button {
-        padding: 18px 48px;
-        width: 200px;
-        font-size: 16px;
-        background-color: $main-color;
-        border: none;
-        color: white;
-        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    select {
+      appearance: none;
+      background-image: url(".././img/icons/arrow-down-icon.png");
+      background-repeat: no-repeat;
+      background-size: 24px;
+      background-position: right;
+      padding-right: 32px;
+      border: none;
+      color: $text-color;
 
-        &:hover {
-            background-color: #7ac9ad;;
-            transform: scale(1.1);
-        }
+      &:focus {
+        outline: none;
+      }
     }
+  }
+
+  .hero-form-button {
+    padding: 18px 48px;
+    width: 200px;
+    font-size: 16px;
+    background-color: $main-color;
+    border: none;
+    color: white;
+    transition:
+      background-color 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #7ac9ad;
+      transform: scale(1.1);
+    }
+  }
 }
 
 @include tablet-screen {
-    .hero-form {
-        flex-direction: row;
-        width: 740px;
-    }
+  .hero-form {
+    flex-direction: row;
+    width: 740px;
+  }
 }
 
 @include dekstop-screen {
-    .hero-form {
-        flex-direction: row;
-        width: 751px;
-    }
+  .hero-form {
+    flex-direction: row;
+    width: 751px;
+  }
 }
-

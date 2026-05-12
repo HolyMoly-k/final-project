@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Category: houses, price: $200-$500+, place: Bogor, London, Paris">
     <title>Mulih</title>
+    <link rel="preload" as="image" href="./img/hero-section/hero-background.webp" fetchpriority="high">
     <link rel="icon" href="./img/icons/main-icon.png" type="image/png" />
     <link rel="stylesheet" href="./css/main.min.css" />
     <link
@@ -15,7 +17,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+    <link 
       href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Erica+One&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Tangerine:wght@400;700&display=swap"
       rel="stylesheet"
     />
@@ -27,7 +29,8 @@
     />
   </head>
   <body>
-    <header class="header">
+    <div id="home"></div>
+    <header class="header" id="header">
       <div class="container">
         <div class="header-wrapper">
           <a href="#" class="logo"
@@ -39,7 +42,7 @@
             />Mulih</a>
           <nav class="navigation">
             <ul class="nav-list">
-              <li><a href="#hero-section">Home</a></li>
+              <li><a href="#home">Home</a></li>
               <li><a href="#discover-section">Property</a></li>
               <li><a href="#our_advante-section">About</a></li>
               <li><a href="#about_us-section">Service</a></li>
@@ -55,6 +58,9 @@
     </header>
     <main>
       <section class="hero-section" id="hero-section">
+        <div class="hero-animation">
+            <h3>ACTION <br><span>-50%</span></h3>
+        </div>
         <div class="container">
           <p class="hero-text-starter">REAL ESTATE</p>
           <h1 class="hero-title">Let's hunt for your dream residence</h1>
@@ -179,7 +185,7 @@
         <div class="container">
             <div class="about_us-wrapper">
                 <div class="about_image-wrapper">
-                    <img class="about-main-image" src="./img/about_us-section/main.png" alt="house image" width="609" height="475">
+                    <img class="about-main-image" src="./img/about_us-section/main.webp" alt="house image" width="609" height="475">
                     <div class="about_review-card">
                         <div class="about_image-checkmark-wrapper"><img class="about_image-checkmark" src="./img/icons/about_us-section/checkmark.svg" width="27" height="27" alt="check-mark"></div>
                         <h3 class="about_review-title">4.8</h3>
@@ -218,7 +224,7 @@
                     <h3>It proved to be exactly the kind of home we wanted.</h3>
                     <p class="customer-review-description">We wish to express our thanks for your hard work in finding us a temporary home, which proved to be exactly what we wanted.</p>
                     <div class="customer-list-review-wrapper">
-                        <img src="./img/customer-testimonial-section/first-review.jpg" alt="Jaydon Aminoff" width="48" height="48">
+                        <img src="./img/customer-testimonial-section/first-review.webp" alt="Jaydon Aminoff" width="48" height="48">
                         <div>
                             <p class="customer-list-review-name">Jaydon Aminoff</p>
                             <p class="customer-list-review-job">UX Designer</p>
@@ -229,7 +235,7 @@
                     <h3 class="customer_second-review-title">Nobody knows Portland and the peninsula better than David.</h3>
                     <p class="customer-review-description">My wife and I had a dream of downsizing from our house in Cape Elizabeth into a small condo closer to where we work and play in Portland. </p>
                     <div class="customer-list-review-wrapper">
-                        <img src="./img/customer-testimonial-section/second-review.jpg" alt="Alfredo Donin" width="48" height="48">
+                        <img src="./img/customer-testimonial-section/second-review.webp" alt="Alfredo Donin" width="48" height="48">
                         <div>
                             <p class="customer-list-review-name">Alfredo Donin</p>
                             <p class="customer-list-review-job">UI Designer</p>
@@ -240,7 +246,7 @@
                     <h3>He keeps his client’s best interests in sharp focus</h3>
                     <p class="customer-review-description">After working with David to sell my home in 2013, I was convinced that he’s the only realtor I’ll ever need. Since then, I’ve bought two properties and sold one.</p>
                     <div class="customer-list-review-wrapper">
-                        <img src="./img/customer-testimonial-section/thirth.jpg" alt="Makenna Korsgaard" width="48" height="48">
+                        <img src="./img/customer-testimonial-section/thirth.webp" alt="Makenna Korsgaard" width="48" height="48">
                         <div>
                             <p class="customer-list-review-name">Makenna Korsgaard</p>
                             <p class="customer-list-review-job">UX Researcher</p>
