@@ -1,0 +1,29 @@
+@import '../utils/variables';
+
+.arrow-up {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: $main-color;
+    z-index: 1000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    bottom: -70px;
+    right: 80px;
+    transition: all 0.3s ease-in-out;
+
+    .arrow-up-text {
+        font-size: 13px;
+    }
+
+    &.arrow-active {
+        bottom: 30px;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+        background-color: #86dbbd;;
+    }
+}

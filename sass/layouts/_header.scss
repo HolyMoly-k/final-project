@@ -7,7 +7,7 @@
     background: $main-color-and-background;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 @include dekstop-screen {
@@ -22,6 +22,12 @@
     // justify-content: space-between;
     flex-direction: column;
     gap: 15px;
+}
+
+.header-menu-button {
+    border: none;
+    background-color: none;
+    border-radius: 50%;
 }
 
 @include tablet-screen {
@@ -63,7 +69,7 @@
     // margin-right: 32px;
     font-weight: 500;
     font-size: 14px;
-    letter-spacing: 0.03em
+    letter-spacing: 0.03em;
 }
 
 @include tablet-screen {
@@ -92,7 +98,6 @@
     color: $text-color;
     position: relative;
     transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-    
 }
 
 .nav-list li a::after{

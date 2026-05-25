@@ -29,6 +29,9 @@
     />
   </head>
   <body>
+    <a href="#home" class="arrow-up" id="arrow-up">
+        <img src="./img/icons/arrow-up.png" width="30" height="30" alt="arrow up">
+    </a>
     <div id="home"></div>
     <header class="header" id="header">
       <div class="container">
@@ -58,9 +61,9 @@
     </header>
     <main>
       <section class="hero-section" id="hero-section">
-        <div class="hero-animation">
+        <!-- <div class="hero-animation">
             <h3>ACTION <br><span>-50%</span></h3>
-        </div>
+        </div> -->
         <div class="container">
           <p class="hero-text-starter">REAL ESTATE</p>
           <h1 class="hero-title">Let's hunt for your dream residence</h1>
@@ -69,10 +72,10 @@
             separate accommodation suitable for you.
           </p>
           <ul class="hero-button-list">
-            <li><button class="hero-buy-button">Buy</button></li>
-            <li><button>Rent</button></li>
+            <li><button class="hero-buy-button" id="hero-buy-button">Buy</button></li>
+            <li><button id="hero-rent-button">Rent</button></li>
           </ul>
-          <form class="hero-form" action="#">
+          <form class="hero-form" id="hero-form" action="#">
             <div class="hero-form-wrapper">
               <label for="location">Location</label>
               <select name="location" id="location" class="select-place">
@@ -217,7 +220,17 @@
             <p class="customer_text-starter">CUSTOMER TESTIMONIAL</p>
             <div class="customer-title-wrapper">
                 <h2 class="customer_title">Peopel say about us?</h2>
-                <a href="#" class="learn-more-link">Learn more <img class="learn-more-link-image" src="./img/icons/arrow-icon.svg" alt="link.png"></a>
+                <button href="#" class="learn-more-link" id="customer_link-more">Text your review <img class="learn-more-link-image" src="./img/icons/arrow-icon.svg" alt="link.png"></button>
+            </div>
+            <div class="customer_window" id="customer_window">
+                <button class="customer_window-close" id="customer_window-close"><img class="customer_window-close-image" src="./img/icons/cross.png" width="25" height="25" alt="cross"></button>
+                <form action="#" class="customer_form">
+                    <div class="customer_form-name-wrapper">
+                        <label class="customer_form-name-label" for="customer_input-name">Enter your review</label>
+                        <textarea class="customer_form-name-input" name="customer_input-name" id=""></textarea>
+                    </div>
+                    <button class="customer_button-sumbit" type="submit">Submit</button>
+                </form>
             </div>
             <ul class="customer-list">
                 <li>
@@ -299,5 +312,6 @@
             </div>
         </div>
     </footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>

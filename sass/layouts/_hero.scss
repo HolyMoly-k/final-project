@@ -15,86 +15,86 @@
   position: relative;
 }
 
-.hero-animation {
-  display: none;
-  position: absolute;
-  right: 20%;
-  bottom: 20%;
-  background-color: rgb(252, 72, 72);
-  padding: 25px 75px;
-  border-radius: 35px;
-  letter-spacing: 0.3em;
-  animation: action-animation 2s ease-in-out 0s infinite alternate running;
+// .hero-animation {
+//   display: none;
+//   position: absolute;
+//   right: 20%;
+//   bottom: 20%;
+//   background-color: rgb(252, 72, 72);
+//   padding: 25px 75px;
+//   border-radius: 35px;
+//   letter-spacing: 0.3em;
+//   animation: action-animation 2s ease-in-out 0s infinite alternate running;
 
-  h3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 30px;
-    color: rgb(255, 242, 242);
+//   h3 {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     font-size: 30px;
+//     color: rgb(255, 242, 242);
 
-    span {
-      color: white;
-      font-size: 35px;
-    }
-  }
+//     span {
+//       color: white;
+//       font-size: 35px;
+//     }
+//   }
 
-  @include tablet-screen {
-    & {
-      display: block;
-      padding: 15px 55px;
-      bottom: 50%;
-      right: 10%;
-      h3 {
-        font-size: 15px;
+//   @include tablet-screen {
+//     & {
+//       display: block;
+//       padding: 15px 55px;
+//       bottom: 50%;
+//       right: 10%;
+//       h3 {
+//         font-size: 15px;
 
-        span {
-          font-size: 20px;
-        }
-      }
-    }
-  }
+//         span {
+//           font-size: 20px;
+//         }
+//       }
+//     }
+//   }
 
-  @include dekstop-screen {
-    & {
-      right: 15%;
-      bottom: 20%;
-      padding: 25px 75px;
+//   @include dekstop-screen {
+//     & {
+//       right: 15%;
+//       bottom: 20%;
+//       padding: 25px 75px;
 
-      h3 {
-        font-size: 30px;
+//       h3 {
+//         font-size: 30px;
 
-        span {
-          font-size: 35px;
-        }
-      }
-    }
-  }
-}
+//         span {
+//           font-size: 35px;
+//         }
+//       }
+//     }
+//   }
+// }
 
-@keyframes action-animation {
-  0% {
-    box-shadow: 0 0 10px red;
-    transform: scale(1);
-    rotate: 10deg;
-  }
+// @keyframes action-animation {
+//   0% {
+//     box-shadow: 0 0 10px red;
+//     transform: scale(1);
+//     rotate: 10deg;
+//   }
 
-  33% {
-    box-shadow: 0 0 16px red;
-    transform: scale(1.2);
-    rotate: -10deg;
-  }
+//   33% {
+//     box-shadow: 0 0 16px red;
+//     transform: scale(1.2);
+//     rotate: -10deg;
+//   }
 
-  66% {
-    box-shadow: 0 0 10px red;
-    transform: scale(1);
-  }
+//   66% {
+//     box-shadow: 0 0 10px red;
+//     transform: scale(1);
+//   }
 
-  100% {
-    box-shadow: 0 0 10px red;
-    transform: scale(1);
-  }
-}
+//   100% {
+//     box-shadow: 0 0 10px red;
+//     transform: scale(1);
+//   }
+// }
 
 @include tablet-screen {
   .hero-section {
@@ -210,7 +210,7 @@
     font-size: 18px;
     background-color: $main-color-and-background;
     color: $text-color;
-    transition: color 0.2s linear;
+    transition: all 0.3s ease-in-out;
 
     &.hero-buy-button {
       background-color: white;
@@ -250,6 +250,11 @@
   padding: 32px;
   // width: 751px;
   gap: 40px;
+  transition: margin 0.3s ease-in-out;
+
+  &.hero-form-rent {
+    margin-left: 109px;
+  }
 
   .hero-form-wrapper {
     display: flex;
