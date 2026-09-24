@@ -21,12 +21,6 @@
       href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Erica+One&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Tangerine:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Erica+One&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tangerine:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <a href="#home" class="arrow-up" id="arrow-up">
@@ -44,20 +38,28 @@
               height="30"
             />Mulih</a>
           <nav class="navigation">
-            <ul class="nav-list">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#discover-section">Property</a></li>
-              <li><a href="#our_advante-section">About</a></li>
-              <li><a href="#about_us-section">Service</a></li>
-              <li><a href="#customer_testimonial_section">Contact</a></li>
-            </ul>
+            <div class="burger-trigger" id="burger-trigger"></div>
+            <div class="navigation-wrapper" id="navigation-menu">
+                <ul class="nav-list" id="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#discover-section">Property</a></li>
+                <li><a href="#our_advante-section">About</a></li>
+                <li><a href="#about_us-section">Service</a></li>
+                <li><a href="#customer_testimonial_section">Contact</a></li>
+                </ul>
+            </div>
             <ul class="login-list">
-                <li><a href="#" class="login-list-sign">Sign in</a></li>
+                <li><a href="#" class="login-list-sign">Sign</a></li>
                 <li><a href="#" class="login-list-login">Login</a></li>
             </ul>
           </nav>
+          <button class="navigation-burger" id="navigation-burger">
+            <div class="line-burger-menu"></div>
+            <div class="line-burger-menu"></div>
+            <div class="line-burger-menu"></div>
+          </button>
+          </div>
         </div>
-      </div>
     </header>
     <main>
       <section class="hero-section" id="hero-section">
@@ -95,9 +97,9 @@
             <div class="hero-form-wrapper">
               <label for="price">Price Range</label>
               <select name="price" id="price" class="select-price">
-                <option value="200-350">$200-$350</option>
-                <option value="350-500">$350-$500</option>
-                <option value="500+">$500+</option>
+                <option value="500-750">$500-$750</option>
+                <option value="750-1200">$750-$1200</option>
+                <option value="1200+">$1200+</option>
               </select>
             </div>
             <button type="submit" class="hero-form-button">Search</button>
@@ -221,16 +223,6 @@
             <div class="customer-title-wrapper">
                 <h2 class="customer_title">Peopel say about us?</h2>
                 <button href="#" class="learn-more-link" id="customer_link-more">Text your review <img class="learn-more-link-image" src="./img/icons/arrow-icon.svg" alt="link.png"></button>
-            </div>
-            <div class="customer_window" id="customer_window">
-                <button class="customer_window-close" id="customer_window-close"><img class="customer_window-close-image" src="./img/icons/cross.png" width="25" height="25" alt="cross"></button>
-                <form action="#" class="customer_form">
-                    <div class="customer_form-name-wrapper">
-                        <label class="customer_form-name-label" for="customer_input-name">Enter your review</label>
-                        <textarea class="customer_form-name-input" name="customer_input-name" id=""></textarea>
-                    </div>
-                    <button class="customer_button-sumbit" type="submit">Submit</button>
-                </form>
             </div>
             <ul class="customer-list">
                 <li>
