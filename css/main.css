@@ -96,7 +96,7 @@ button:hover {
   flex-direction: column-reverse;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.98);
-  width: calc(100% - 32px);
+  width: calc(60% - 64px);
   max-width: 280px;
   padding: 28px 24px 24px;
   border: 1px solid rgba(105, 185, 157, 0.15);
@@ -163,8 +163,8 @@ button:hover {
   height: 6px;
   background-color: #69b99d;
   border-radius: 100%;
-  bottom: -10%;
-  left: 40%;
+  bottom: 0%;
+  left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
@@ -301,6 +301,24 @@ button:hover {
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
+.nav-icon {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 8px;
+  color: #69b99d;
+  flex-shrink: 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-list li a:hover .nav-icon {
+  color: #69b99d;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-icon {
+    display: none;
+  }
+}
 .login-list li a {
   padding: 8px 20px;
   transition: background-color 0.2s ease-in-out;
@@ -509,12 +527,16 @@ button:hover {
   outline: none;
 }
 .hero-form .hero-form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 18px 48px;
-  width: 200px;
   font-size: 16px;
   background-color: #69b99d;
   border: none;
   color: white;
+  flex-shrink: 1;
+  min-width: 0;
   transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .hero-form .hero-form-button:hover {
@@ -534,6 +556,174 @@ button:hover {
     width: 751px;
   }
 }
+.show-homes {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  box-shadow: 0 24px 60px rgba(31, 39, 68, 0.22), 0 4px 14px rgba(31, 39, 68, 0.1), 0 0 0 9999px rgba(31, 39, 68, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 25px;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: calc(100vw - 32px);
+  max-width: 400px;
+  max-height: 82vh;
+  padding: 26px 20px 20px;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out, visibility 0.25s ease-in-out;
+}
+.show-homes .logo {
+  flex-shrink: 0;
+  width: 100%;
+  padding-bottom: 16px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #ececec;
+}
+.show-homes .list-show-homes {
+  margin-top: 4px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.show-homes .list-show-homes::-webkit-scrollbar {
+  width: 6px;
+}
+.show-homes .list-show-homes::-webkit-scrollbar-track {
+  background: transparent;
+}
+.show-homes .list-show-homes::-webkit-scrollbar-thumb {
+  background-color: rgba(105, 185, 157, 0.4);
+  border-radius: 10px;
+}
+.show-homes .list-show-homes li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  padding: 14px;
+  background-color: white;
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.show-homes .list-show-homes li img {
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+.show-homes .list-show-homes li:hover {
+  border-color: #69b99d;
+  box-shadow: 0 10px 24px rgba(31, 39, 68, 0.12);
+  transform: translateY(-4px);
+}
+.show-homes.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+.show-homes .close-show-homes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid #69b99d;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(31, 39, 68, 0.12);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.show-homes .close-show-homes .close-showhomes-line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #69b99d;
+  transition: 0.2s ease;
+}
+.show-homes .close-show-homes .close-showhomes-line.line1 {
+  transform: rotate(45deg);
+}
+.show-homes .close-show-homes .close-showhomes-line.line2 {
+  transform: rotate(-45deg);
+}
+.show-homes .close-show-homes:hover {
+  background-color: #69b99d;
+  box-shadow: 0 6px 16px rgba(31, 39, 68, 0.18);
+  transform: scale(1.05);
+}
+.show-homes .close-show-homes:hover .close-showhomes-line {
+  background-color: white;
+}
+.show-homes .close-show-homes:active {
+  transform: scale(0.95);
+}
+
+@media screen and (min-width: 768px) {
+  .show-homes {
+    width: auto;
+    min-width: 320px;
+    max-width: min(92vw, 640px);
+    max-height: 78vh;
+    padding: 30px 26px 24px;
+  }
+  .show-homes .list-show-homes {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .show-homes .list-show-homes li {
+    flex: 0 0 auto;
+    width: 260px;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .show-homes {
+    max-width: min(90vw, 900px);
+  }
+  .show-homes .list-show-homes li {
+    width: 260px;
+  }
+}
+.error {
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 280%);
+  background-color: rgba(144, 238, 199, 0.8);
+  padding: 15px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  border: 1px solid #5dc09d;
+  box-shadow: 0 20px 45px rgba(31, 39, 68, 0.18), 0 2px 10px rgba(31, 39, 68, 0.08);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  transition: 0.1s transform ease-in-out, 0.1s opacity ease-in-out;
+}
+.error.show {
+  transform: translate(-50%, 0%);
+  opacity: 1;
+}
+
 .container {
   display: block;
   padding: 0 20px;
@@ -670,6 +860,8 @@ button:hover {
 .discover-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
   margin-top: 24px;
 }
@@ -702,56 +894,60 @@ button:hover {
     height: 238px;
   }
 }
-.discover-list li .discover-list-item-title {
+
+.discover-list-item-title {
   font-size: 20px;
   color: #1f2744;
   margin-top: 16px;
 }
 @media screen and (min-width: 1240px) {
-  .discover-list li .discover-list-item-title {
+  .discover-list-item-title {
     font-size: 24px;
   }
 }
-.discover-list li .discover-list-description {
+
+.discover-list-description {
   font-size: 13px;
   color: #73788c;
   margin-top: 8px;
 }
 @media screen and (min-width: 1240px) {
-  .discover-list li .discover-list-description {
+  .discover-list-description {
     font-size: 16px;
   }
 }
-.discover-list li .discover-money-area-group {
+
+.discover-money-area-group {
   display: flex;
   align-items: center;
   gap: 32px;
   margin-top: 16px;
 }
-.discover-list li .discover-money-area-group .discover-list-item-price {
+.discover-money-area-group .discover-list-item-price {
   color: #69b99d;
   font-size: 20px;
   font-weight: 600;
 }
 @media screen and (min-width: 1240px) {
-  .discover-list li .discover-money-area-group .discover-list-item-price {
+  .discover-money-area-group .discover-list-item-price {
     font-size: 24px;
   }
 }
-.discover-list li .discover-money-area-group .discover-list-item-area {
+.discover-money-area-group .discover-list-item-area {
   font-size: 12px;
   background-color: #f5f5f5;
   padding: 4px 8px;
 }
 @media screen and (min-width: 1240px) {
-  .discover-list li .discover-money-area-group .discover-list-item-area {
+  .discover-money-area-group .discover-list-item-area {
     font-size: 16px;
   }
 }
-.discover-list li .discover-money-area-group .discover-list-item-area span {
+.discover-money-area-group .discover-list-item-area span {
   color: #73788c;
 }
-.discover-list li .discover-list-item-button {
+
+.discover-list-item-button {
   display: flex;
   justify-content: center;
   color: #69b99d;
@@ -761,13 +957,13 @@ button:hover {
   font-size: 16px;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-.discover-list li .discover-list-item-button:hover {
+.discover-list-item-button:hover {
   background-color: #69b99d;
   color: white;
   box-shadow: 0 0 8px #69b99d;
 }
 @media screen and (min-width: 1240px) {
-  .discover-list li .discover-list-item-button {
+  .discover-list-item-button {
     margin-top: 24px;
   }
 }

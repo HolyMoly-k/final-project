@@ -9,24 +9,24 @@ buttons.forEach((button) => {
         this.classList.add('hero-buy-button')
 
         if (rentButton.classList.contains('hero-buy-button')){
-          select.options[0].value = '100-200';
-          select.options[0].text = '$100-$200';
+          select.options[0].value = '1000-1500';
+          select.options[0].text = '$1000-$1500';
 
-          select.options[1].value = '200-400';
-          select.options[1].text = '$200-$400';
+          select.options[1].value = '1500-3000';
+          select.options[1].text = '$1500-$3000';
 
-          select.options[2].value = '400+';
-          select.options[2].text = '$400+';
+          select.options[2].value = '3000+';
+          select.options[2].text = '$3000+';
         }
         else {
-          select.options[0].value = '500-750';
-          select.options[0].text = '$500-$750';
+          select.options[0].value = '20000-30000';
+          select.options[0].text = '$20000-$30000';
 
-          select.options[1].value = '750-1200';
-          select.options[1].text = '$1200-$750';
+          select.options[1].value = '30000-40000';
+          select.options[1].text = '$30000-$40000';
 
-          select.options[2].value = '1200+';
-          select.options[2].text = '$1200+';
+          select.options[2].value = '40000+';
+          select.options[2].text = '$40000+';
         }
     })
 })
@@ -58,7 +58,9 @@ burgerTrigger.addEventListener('click', function(){
 
 navList.forEach((a) => {
   a.addEventListener('click', function() {
-    navMenu.classList.remove('open')
-    burgerTrigger.classList.remove('open')
+    setTimeout(() => {
+        navMenu.classList.remove('open')
+        burgerTrigger.classList.remove('open')
+    }, 200)
   })
 })

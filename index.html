@@ -41,11 +41,12 @@
             <div class="burger-trigger" id="burger-trigger"></div>
             <div class="navigation-wrapper" id="navigation-menu">
                 <ul class="nav-list" id="nav-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#discover-section">Property</a></li>
-                <li><a href="#our_advante-section">About</a></li>
-                <li><a href="#about_us-section">Service</a></li>
-                <li><a href="#customer_testimonial_section">Contact</a></li>
+                <li><a href="#home"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20a1 1 0 0 0 1 1H9a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h2.5a1 1 0 0 0 1-1V9.5"/></svg>Home</a></li>
+                <li><a href="#discover-section"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/><path d="M9 11h.01M15 11h.01M9 7h.01M15 7h.01"/></svg>Property</a></li>
+                <li><a href="#our_advante-section"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5"/><path d="M12 8h.01"/></svg>About</a></li>
+                <li><a href="#about_us-section"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.6a1.8 1.8 0 0 1 3.4 0l.4 1.2a1.8 1.8 0 0 0 1.6 1.2h1.3a1.8 1.8 0 0 1 1 3.2l-1 .9a1.8 1.8 0 0 0-.6 2l.5 1.3a1.8 1.8 0 0 1-2.7 2l-1.1-.8a1.8 1.8 0 0 0-2.2 0l-1.1.8a1.8 1.8 0 0 1-2.7-2l.5-1.3a1.8 1.8 0 0 0-.6-2l-1-.9a1.8 1.8 0 0 1 1-3.2h1.3a1.8 1.8 0 0 0 1.6-1.2z"/><circle cx="12" cy="12" r="2.5"/></svg>Service</a></li>
+                <li><a href="#customer_testimonial_section"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6.1.8-4.5 4.3 1.1 6-5.3-3-5.3 3 1.1-6-4.5-4.3 6.1-.8z"/></svg>Reviews</a></li>
+                <li><a href="#footer"><svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>Contact</a></li>
                 </ul>
             </div>
             <ul class="login-list">
@@ -63,9 +64,6 @@
     </header>
     <main>
       <section class="hero-section" id="hero-section">
-        <!-- <div class="hero-animation">
-            <h3>ACTION <br><span>-50%</span></h3>
-        </div> -->
         <div class="container">
           <p class="hero-text-starter">REAL ESTATE</p>
           <h1 class="hero-title">Let's hunt for your dream residence</h1>
@@ -81,29 +79,46 @@
             <div class="hero-form-wrapper">
               <label for="location">Location</label>
               <select name="location" id="location" class="select-place">
-                <option value="bogor">Bogor, Jawa Barat</option>
-                <option value="london">London, England</option>
-                <option value="paris">Paris, France</option>
+                <option value="Bogor, Jawa Barat">Bogor, Jawa Barat</option>
+                <option value="London, England">London, England</option>
+                <option value="Paris, France">Paris, France</option>
               </select>
             </div>
             <div class="hero-form-wrapper">
               <label for="type">Type</label>
               <select name="type" id="type" class="select-type">
-                <option value="home">Home</option>
-                <option value="apartament">Apartament</option>
-                <option value="villa">Villa</option>
+                <option value="Home">Home</option>
+                <option value="Apartament">Apartament</option>
+                <option value="Villa">Villa</option>
               </select>
             </div>
             <div class="hero-form-wrapper">
               <label for="price">Price Range</label>
               <select name="price" id="price" class="select-price">
-                <option value="500-750">$500-$750</option>
-                <option value="750-1200">$750-$1200</option>
-                <option value="1200+">$1200+</option>
+                <option value="20000-30000">$20000-$30000</option>
+                <option value="30000-40000">$30000-$40000</option>
+                <option value="40000+">$40000+</option>
               </select>
             </div>
             <button type="submit" class="hero-form-button">Search</button>
           </form>
+          <div class="show-homes" id="show-homes">
+            <button class="close-show-homes" id="close-show-homes">
+                <div class="close-showhomes-line line1"></div>
+                <div class="close-showhomes-line line2"></div>
+            </button>
+            <a href="#" class="logo"
+            ><img class="logo-image"
+                src="./img/icons/main-icon.png"
+                alt="icon.png"
+                width="30"
+                height="30"
+            />Mulih</a>
+            <ul class="list-show-homes" id="list-show-homes">
+                <li></li>
+            </ul>
+          </div>
+          <div class="error" id="error">Not found</div>
         </div>
       </section>
       <section class="discover-section" id="discover-section">
@@ -114,37 +129,7 @@
                 <p class="discover-description">Discover our exclusive selection of the finest one-of-a-kind luxury properties architectural masterpieces.</p>
                 <a href="#" class="learn-more-link">Learn more <img class="learn-more-link-image" src="./img/icons/arrow-icon.svg" alt="link.png"></a>
             </div>
-            <ul class="discover-list">
-                <li>
-                    <img src="./img/discover-section/first-house.jpg" alt="Perum griya asri" width="344" height="238">
-                    <h3 class="discover-list-item-title">Perum griya asri</h3>
-                    <p class="discover-list-description">Bogor, Jawa Barat</p>
-                    <div class="discover-money-area-group">
-                        <p class="discover-list-item-price">$25,000</p>
-                        <p class="discover-list-item-area">360m<sup>2</sup> <span>Living Area</span></p>
-                    </div>
-                    <a href="#" class="discover-list-item-button">Send inquiry</a>
-                </li>
-                <li>
-                    <img src="./img/discover-section/second-house.jpg" alt="Perum kencana asrri" width="344" height="238">
-                    <h3 class="discover-list-item-title">Perum kencana asrri</h3>
-                    <p class="discover-list-description">Bogor, Jawa Barat</p>
-                    <div class="discover-money-area-group">
-                        <p class="discover-list-item-price">$35,000</p>
-                        <p class="discover-list-item-area">360m<sup>2</sup> <span>Living Area</span></p>
-                    </div>
-                    <a href="#" class="discover-list-item-button">Send inquiry</a>
-                </li>
-                <li>
-                    <img src="./img/discover-section/thirth-house.jpg" alt="Perum rakjel elit" width="344" height="238">
-                    <h3 class="discover-list-item-title">Perum rakjel elit</h3>
-                    <p class="discover-list-description">Bogor, Jawa Barat</p>
-                    <div class="discover-money-area-group">
-                        <p class="discover-list-item-price">$40,000</p>
-                        <p class="discover-list-item-area">360m<sup>2</sup> <span>Living Area</span></p>
-                    </div>
-                    <a href="#" class="discover-list-item-button">Send inquiry</a>
-                </li>
+            <ul class="discover-list" id="discover-list">
             </ul>
         </div>
       </section>
@@ -262,7 +247,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-wrapper">
                 <div class="footer-first-column">
@@ -305,5 +290,7 @@
         </div>
     </footer>
     <script src="./js/script.js"></script>
+    <script src="./js/discoverList.js"></script>
+    <script src="./js/searchHouse.js"></script>
   </body>
 </html>
