@@ -1,0 +1,515 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+// Мобильная версия — база. Планшет (768+) и десктоп (1240+) ниже
+// только переопределяют размеры и раскладку через миксины.
+//
+// Идея карточек: «журнальный» стиль. Карточки нумеруются (01, 02, …),
+// цена и площадь «врезаны» белой плашкой в угол фото (как белые плашки
+// в about_us). На планшете/десктопе добавляется «лесенка» колонок.
+// Вёрстка (catalog.html / _macros.html) не менялась.
+
+$catalog-border: #dedcda;
+$catalog-main-dark: #4b997e; // тот же тёмно-зелёный, что в кнопках/бургере
+
+@keyframes catalog-card-in {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+}
+
+.catalog-section {
+    padding-top: 24px;
+    padding-bottom: 50px;
+}
+
+.catalog-title {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 32px;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    font-size: 30px;
+    text-align: center;
+    color: $titles-color;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 64px;
+        height: 3px;
+        margin: 16px auto 0;
+        background-color: $main-color;
+    }
+}
+
+.catalog-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    counter-reset: house;
+}
+
+.catalog-empty {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 14px;
+    color: $text-color;
+}
+
+.catalog-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto; // кнопка всегда прижата к низу
+    width: 100%;
+    max-width: 382px;
+    padding: 16px;
+    border: 1px solid $catalog-border;
+    background-color: white;
+    counter-increment: house;
+    transition: border-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+
+    // Номер карточки — зелёный «ярлычок» в углу фото
+    &::before {
+        content: counter(house, decimal-leading-zero);
+        grid-area: 1 / 1;
+        z-index: 2;
+        align-self: start;
+        justify-self: start;
+        padding: 6px 14px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: white;
+        background-color: $main-color;
+        transition: background-color 0.25s ease-in-out;
+    }
+
+    &:focus-within {
+        border-color: $main-color;
+
+        &::before {
+            background-color: $catalog-main-dark;
+        }
+    }
+}
+
+.catalog-card-image {
+    display: block;
+    grid-area: 1 / 1;
+    width: 100%;
+    aspect-ratio: 344 / 238;
+    object-fit: cover;
+}
+
+.catalog-card-title {
+    grid-row: 2;
+    position: relative;
+    margin-top: 16px;
+    padding-bottom: 12px;
+    font-size: 20px;
+    color: $titles-color;
+
+    // тонкая зелёная черта под названием, растёт при наведении
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 32px;
+        height: 2px;
+        background-color: $main-color;
+        transition: width 0.3s ease-in-out;
+    }
+}
+
+.catalog-card-description {
+    grid-row: 3;
+    margin-top: 8px;
+    font-size: 13px;
+    color: $text-color;
+}
+
+// Цена + площадь: белая «врезка» в левом нижнем углу фото
+.catalog-money-area-group {
+    grid-area: 1 / 1;
+    z-index: 2;
+    align-self: end;
+    justify-self: start;
+    display: flex;
+    flex-wrap: wrap; // на очень узких экранах плашка не вылезет за фото
+    align-items: center;
+    gap: 4px 16px;
+    max-width: 100%;
+    padding: 12px 16px 0 0;
+    background-color: white;
+
+    .catalog-card-price {
+        font-size: 20px;
+        font-weight: 600;
+        color: $main-color;
+    }
+
+    .catalog-card-area {
+        padding: 4px 8px;
+        font-size: 12px;
+        background-color: $main-color-and-background;
+
+        span {
+            color: $text-color;
+        }
+    }
+}
+
+.catalog-card-button {
+    grid-row: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 12px;
+    border: 1px solid $main-color;
+    font-size: 16px;
+    color: $main-color;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    // стрелка-шеврон, как «пуговица» ссылки Learn more в Discover
+    &::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid currentColor;
+        border-right: 2px solid currentColor;
+        transform: rotate(45deg);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover,
+    &:active { // :active — отклик на нажатие пальцем, там hover'а нет
+        background-color: $main-color;
+        color: white;
+        box-shadow: 0 0 8px $main-color;
+
+        &::after {
+            transform: translateX(4px) rotate(45deg);
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid $main-color;
+        outline-offset: 3px;
+    }
+}
+
+// Hover только там, где он есть (на тачскрине не «залипает»)
+@media (hover: hover) {
+    .catalog-card:hover {
+        border-color: $main-color;
+        box-shadow: 0 14px 34px rgba(105, 185, 157, 0.3);
+        transform: translateY(-6px);
+
+        &::before {
+            background-color: $catalog-main-dark;
+        }
+
+        .catalog-card-title::after {
+            width: 64px;
+        }
+    }
+}
+
+// Мягкое появление карточек по очереди
+@media (prefers-reduced-motion: no-preference) {
+    .catalog-card {
+        animation: catalog-card-in 0.6s ease-out backwards;
+
+        @for $i from 2 through 12 {
+            &:nth-child(#{$i}) {
+                animation-delay: ($i - 1) * 0.08s;
+            }
+        }
+    }
+}
+
+// ---------- Планшет ----------
+@include tablet-screen {
+    .catalog-section {
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+
+    // Заголовок на планшете показываем (как .discover-title: по центру)
+    .catalog-title {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0 0 32px;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        font-size: 30px;
+        text-align: center;
+        color: $titles-color;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 64px;
+            height: 3px;
+            margin: 16px auto 0;
+            background-color: $main-color;
+        }
+    }
+
+    .catalog-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        justify-content: stretch;
+        gap: 24px;
+        padding-bottom: 32px; // запас под опущенные карточки
+    }
+
+    .catalog-empty {
+        grid-column: 1 / -1;
+    }
+
+    .catalog-card {
+        max-width: none;
+
+        &:nth-child(even) {
+            translate: 0 32px;
+        }
+    }
+
+    .catalog-card-description {
+        font-size: 14px;
+    }
+
+    .catalog-money-area-group .catalog-card-area {
+        font-size: 13px;
+    }
+}
+
+// ---------- Десктоп ----------
+@include dekstop-screen {
+    .catalog-section {
+        padding-top: 60px;
+        padding-bottom: 120px;
+    }
+
+    // Заголовок слева + линия во всю ширину (первые 64px — зелёные)
+    .catalog-title {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        margin-bottom: 48px;
+        font-size: 48px;
+        text-align: left;
+
+        &::after {
+            flex: 1;
+            width: auto;
+            height: 2px;
+            margin: 0;
+            background: linear-gradient(to right, $main-color 64px, $catalog-border 64px);
+        }
+    }
+
+    // 3 колонки по 378px при gap 34px — ровно как .discover-list на главной
+    .catalog-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 34px;
+        padding-bottom: 48px;
+    }
+
+    .catalog-card {
+        // на планшете опускали каждую чётную, здесь — среднюю колонку
+        &:nth-child(even) {
+            translate: none;
+        }
+
+        &:nth-child(3n + 2) {
+            translate: 0 48px;
+        }
+
+        &::before {
+            padding: 8px 18px;
+            font-size: 16px;
+        }
+    }
+
+    .catalog-money-area-group {
+        gap: 4px 24px;
+        padding: 14px 24px 0 0;
+
+        .catalog-card-price {
+            font-size: 24px;
+        }
+
+        .catalog-card-area {
+            font-size: 16px;
+        }
+    }
+
+    .catalog-card-title {
+        font-size: 24px;
+    }
+
+    .catalog-card-description {
+        font-size: 16px;
+    }
+
+    .catalog-card-button {
+        margin-top: 24px;
+    }
+}
+
+// =============================================================
+// Пагинация
+// Две квадратные стрелки по центру, под ними — полоска с номерами
+// (фон как у шапки/футера, текущая страница залита зелёным).
+// На крайних страницах стрелка не исчезает, а «гаснет» (.is-disabled),
+// чтобы кнопки не прыгали.
+// =============================================================
+
+.catalog-pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.catalog-pagination-arrows {
+    display: flex;
+    gap: 12px;
+}
+
+.catalog-pagination-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid $main-color;
+    color: $main-color;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    // шеврон рисуем рамками; «вперёд» — тот же шеврон, повёрнутый на 180°
+    &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-left: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: translateX(2px) rotate(45deg);
+    }
+
+    &.next::before {
+        transform: translateX(-2px) rotate(-135deg);
+    }
+
+    &:focus-visible {
+        outline: 2px solid $main-color;
+        outline-offset: 3px;
+    }
+
+    &.is-disabled {
+        border-color: $catalog-border;
+        color: $catalog-border;
+        pointer-events: none;
+    }
+}
+
+.catalog-pagination-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px;
+    background-color: $main-color-and-background;
+}
+
+.catalog-pagination-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 8px;
+    font-size: 15px;
+    color: $text-color;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    &:focus-visible {
+        outline: 2px solid $main-color;
+        outline-offset: 2px;
+    }
+
+    &.is-current {
+        background-color: $main-color;
+        color: white;
+        box-shadow: 0 0 14px rgba(105, 185, 157, 0.5);
+    }
+}
+
+@media (hover: hover) {
+    .catalog-pagination-arrow:not(.is-disabled):hover {
+        background-color: $main-color;
+        color: white;
+        box-shadow: 0 0 8px $main-color;
+    }
+
+    .catalog-pagination-link:not(.is-current):hover {
+        background-color: white;
+        color: $main-color;
+    }
+}
+
+@include tablet-screen {
+    .catalog-pagination {
+        gap: 20px;
+        margin-top: 24px; // у сетки уже есть запас под опущенные карточки
+    }
+
+    .catalog-pagination-arrow {
+        width: 48px;
+        height: 48px;
+    }
+
+    .catalog-pagination-link {
+        min-width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+}
+
+@include dekstop-screen {
+    .catalog-pagination {
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    .catalog-pagination-arrow {
+        width: 56px;
+        height: 56px;
+
+        &::before {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+    .catalog-pagination-link {
+        min-width: 48px;
+        height: 48px;
+    }
+}

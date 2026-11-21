@@ -1,0 +1,930 @@
+@import '../../utils/variables';
+@import '../../utils/mixins';
+
+.house-section {
+    padding-top: 24px;
+    padding-bottom: 50px;
+
+    @include tablet-screen {
+        & {
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+    }
+
+    @include dekstop-screen {
+        & {
+            padding-top: 60px;
+            padding-bottom: 120px;
+        }
+    }
+}
+
+.house-card {
+    max-width: 720px;
+    margin: 0 auto;
+
+    @include dekstop-screen {
+        & {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+            align-items: stretch;
+            gap: 48px;
+            max-width: none;
+        }
+    }
+}
+
+.house-content {
+    @include dekstop-screen {
+        & {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+    }
+}
+
+.house-gallery {
+    position: relative;
+    padding: 12px;
+    border: 1px solid #dedcda;
+    background-color: $main-color-and-background;
+
+    @include tablet-screen {
+        & {
+            padding: 16px;
+        }
+    }
+
+    @include dekstop-screen {
+        & {
+            display: flex;
+            padding: 20px;
+        }
+    }
+
+    .house-image {
+        display: block;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+
+        @include tablet-screen {
+            & {
+                height: 320px;
+            }
+        }
+        
+        @include dekstop-screen {
+            & {
+                flex: 1;
+                height: auto;
+                min-height: 520px;
+            }
+        }
+    }
+
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        padding: 0;
+        border: none;
+        background-color: white;
+        box-shadow: 0 0 30px 0 rgba(105, 185, 157, 0.48);
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        border-radius: 50%;
+
+        &::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid $main-color;
+            border-bottom: 2px solid $main-color;
+        }
+
+        &:hover {
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        &:active {
+            transform: translateY(-50%) scale(0.96);
+        }
+
+        &:focus-visible {
+            outline: 2px solid $titles-color;
+            outline-offset: 2px;
+        }
+
+        @include tablet-screen {
+            & {
+                width: 33px;
+                height: 33px;
+            }
+        }
+    }
+
+    .buttons.prev {
+        left: 16px;
+
+        &::after {
+            transform: translateX(2px) rotate(135deg);
+        }
+
+        @include tablet-screen {
+            & {
+                left: 32px;
+            }
+        }
+
+        @include dekstop-screen {
+            & {
+                left: 40px;
+            }
+        }
+    }
+
+    .buttons.next {
+        right: 16px;
+
+        &::after {
+            transform: translateX(-2px) rotate(-45deg);
+        }
+
+        @include tablet-screen {
+            & {
+                right: 32px;
+            }
+        }
+
+        @include dekstop-screen {
+            & {
+                right: 40px;
+            }
+        }
+    }
+
+    .buttons {
+        display: none;
+
+        &.open {
+            display: flex;
+        }
+    }
+}
+
+.house-title {
+    margin-top: 24px;
+    font-size: 24px;
+    color: $titles-color;
+    text-align: center;
+
+    @include tablet-screen {
+        & {
+            font-size: 30px;
+        }
+    }
+
+    @include dekstop-screen {
+        & {
+            margin-top: 0;
+            font-size: 40px;
+            line-height: 120%;
+            text-align: left;
+        }
+    }
+}
+
+.house-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px 32px;
+    margin-top: 16px;
+
+    @include dekstop-screen {
+        & {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-top: 24px;
+        }
+    }
+
+    .house-price {
+        color: $main-color;
+        font-size: 20px;
+        font-weight: 600;
+
+        @include dekstop-screen {
+            & {
+                font-size: 36px;
+            }
+        }
+    }
+
+    .house-area {
+        font-size: 12px;
+        background-color: $main-color-and-background;
+        padding: 4px 8px;
+
+        @include dekstop-screen {
+            & {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+        }
+
+        span {
+            color: $text-color;
+        }
+    }
+}
+
+.house-info {
+    margin-top: 16px;
+
+    @include dekstop-screen {
+        & {
+            flex: 1;
+            margin-top: 24px;
+            padding: 28px 32px;
+            border: 1px solid #dedcda;
+            background-color: $main-color-and-background;
+        }
+    }
+
+    .house-info-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        color: #9b9b9b;
+        cursor: pointer;
+        user-select: none;
+        list-style: none;
+        transition: color 0.2s ease-in-out;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &:hover {
+            color: $main-color;
+        }
+
+        @include dekstop-screen {
+            & {
+                display: none;
+            }
+        }
+
+        &::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: translateY(-2px) rotate(45deg);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .house-info-toggle-open {
+            display: none;
+        }
+    }
+
+    &[open] .house-info-toggle::after {
+        transform: translateY(2px) rotate(-135deg);
+    }
+
+    &:not([open]) .house-info-toggle {
+        .house-info-toggle-close {
+            display: none;
+        }
+
+        .house-info-toggle-open {
+            display: inline;
+        }
+    }
+
+    .house-info-content {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 163%;
+        color: $text-color;
+
+        @include tablet-screen {
+            & {
+                font-size: 14px;
+            }
+        }
+
+        @include dekstop-screen {
+            & {
+                margin-top: 0;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .house-details-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 20px;
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #dedcda;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .house-details-name {
+            color: $text-color;
+        }
+
+        .house-details-value {
+            color: $titles-color;
+            font-weight: 500;
+            text-align: right;
+        }
+    }
+}
+
+.house-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+
+    @include dekstop-screen {
+        & {
+            flex-direction: row;
+            align-items: stretch;
+            gap: 24px;
+            margin-top: 32px;
+        }
+    }
+
+    .house-invoice-button {
+        width: 100%;
+        padding: 18px 48px;
+        border: none;
+        font-size: 16px;
+        color: white;
+        background-color: $main-color;
+        box-shadow: 0 0 30px 0 rgba(105, 185, 157, 0.48);
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+        @include dekstop-screen {
+            & {
+                flex: 1;
+                width: auto;
+                padding: 18px 24px;
+            }
+        }
+
+        &:hover {
+            background-color: #7ac9ad;
+            transform: scale(1.02);
+        }
+    }
+
+    .house-rent-button {
+        width: 60%;
+        min-width: 140px;
+        padding: 12px;
+        font-size: 16px;
+        color: $main-color;
+        background-color: transparent;
+        border: 1px solid $main-color;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+        @include dekstop-screen {
+            & {
+                flex: 1;
+                width: auto;
+                min-width: 0;
+                padding: 18px 24px;
+            }
+        }
+
+        &:hover {
+            background-color: $main-color;
+            color: white;
+            box-shadow: 0 0 8px $main-color;
+        }
+    }
+}
+
+.show-form {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  box-shadow:
+    0 24px 60px rgba(31, 39, 68, 0.22),
+    0 4px 14px rgba(31, 39, 68, 0.1),
+    0 0 0 9999px rgba(31, 39, 68, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 25px;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: calc(100vw - 32px);
+  max-width: 400px;
+  max-height: 82vh;
+  padding: 26px 20px 20px;
+
+  @include tablet-screen {
+    & {
+      max-width: 520px;
+      padding: 32px 36px 36px;
+    }
+  }
+
+  transition:
+    opacity 0.25s ease-in-out,
+    transform 0.25s ease-in-out,
+    visibility 0.25s ease-in-out;
+
+  .logo {
+    flex-shrink: 0;
+    width: 100%;
+    padding-bottom: 16px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #ececec;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .close-show-homes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: -14px;
+    right: -14px;
+
+    width: 40px;
+    height: 40px;
+
+    padding: 0;
+    border: 2px solid $main-color;
+    border-radius: 50%;
+
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(31, 39, 68, 0.12);
+
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    .close-showhomes-line {
+      position: absolute;
+
+      width: 20px;
+      height: 2px;
+
+      border-radius: 2px;
+      background-color: $main-color;
+
+      transition: 0.2s ease;
+
+      &.line1 {
+        transform: rotate(45deg);
+      }
+
+      &.line2 {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      background-color: $main-color;
+      box-shadow: 0 6px 16px rgba(31, 39, 68, 0.18);
+      transform: scale(1.05);
+
+      .close-showhomes-line {
+        background-color: white;
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  .contacts-form-header {
+    margin-top: 20px;
+
+    @include tablet-screen {
+      & {
+        margin-top: 24px;
+      }
+    }
+
+    .contacts-form-title {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 120%;
+      color: $titles-color;
+
+      @include tablet-screen {
+        & {
+          font-size: 26px;
+        }
+      }
+    }
+
+    .contacts-form-subtitle {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 150%;
+      color: $text-color;
+
+      @include tablet-screen {
+        & {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .contacts-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+
+    @include tablet-screen {
+      & {
+        gap: 20px;
+        margin-top: 28px;
+      }
+    }
+
+    .contacts-form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include mobile-screen {
+        & {
+          flex-direction: row;
+          gap: 24px;
+        }
+      }
+
+      @include tablet-screen {
+        & {
+          gap: 32px;
+        }
+      }
+    }
+
+    .contacts-form-input {
+      flex: 1;
+      min-width: 0;
+      padding: 8px 4px;
+      border: none;
+      border-bottom: 2px solid #dedcda;
+      border-radius: 0;
+      background-color: transparent;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      color: $titles-color;
+      transition: border-color 0.2s ease-in-out;
+
+      @include tablet-screen {
+        & {
+          font-size: 16px;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom-color: $main-color;
+      }
+    }
+
+    .contacts-form-message {
+      width: 100%;
+      min-height: 96px;
+      padding: 10px 12px;
+      border: 1px solid #dedcda;
+      border-radius: 8px;
+      background-color: transparent;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      color: $titles-color;
+      resize: vertical;
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+      @include tablet-screen {
+        & {
+          min-height: 112px;
+          font-size: 16px;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $main-color;
+        box-shadow: 0 0 0 3px rgba(105, 185, 157, 0.2);
+      }
+    }
+
+    .contacts-form-input,
+    .contacts-form-message {
+      &::placeholder {
+        font-weight: 500;
+        color: #9b9b9b;
+      }
+    }
+
+    .contacts-form-object {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 8px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: $text-color;
+      background-color: $main-color-and-background;
+
+      @include tablet-screen {
+        & {
+          font-size: 14px;
+        }
+      }
+
+      .contacts-form-object-title {
+        font-weight: 500;
+        color: $titles-color;
+      }
+
+      .contacts-form-object-price {
+        margin-left: auto;
+        font-weight: 600;
+        color: $main-color;
+      }
+    }
+
+    .contacts-form-button {
+      align-self: center;
+      padding: 12px 40px;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      color: white;
+      background-color: $main-color;
+      box-shadow: 0 0 30px 0 rgba(105, 185, 157, 0.48);
+      transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #7ac9ad;
+        transform: scale(1.04);
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      &:focus-visible {
+        outline: 2px solid $titles-color;
+        outline-offset: 2px;
+      }
+    }
+  }
+}
+
+
+$error-color: #e5707a;
+$error-color-and-background: #fdf0f1;
+
+@keyframes show-result-pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+$error-color: #e5707a;
+$error-color-and-background: #fdf0f1;
+
+@keyframes show-result-pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.show-result {
+  --result-color: #{$main-color};
+  --result-glow: rgba(105, 185, 157, 0.48);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: 1100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  width: calc(100vw - 32px);
+  max-width: 360px;
+  max-height: 82vh;
+  overflow-y: auto;
+  padding: 36px 24px 28px;
+  border-radius: 25px;
+  background-color: white;
+  text-align: center;
+  font-size: 14px;
+  line-height: 150%;
+  color: $text-color;
+  box-shadow:
+    inset 0 6px 0 var(--result-color),
+    0 24px 60px rgba(31, 39, 68, 0.22),
+    0 4px 14px rgba(31, 39, 68, 0.1),
+    0 0 0 9999px rgba(31, 39, 68, 0.45);
+  transition:
+    opacity 0.25s ease-in-out,
+    transform 0.25s ease-in-out,
+    visibility 0.25s ease-in-out;
+
+  @include tablet-screen {
+    & {
+      max-width: 420px;
+      padding: 44px 36px 36px;
+      font-size: 16px;
+    }
+  }
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    background-color: var(--result-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px;
+    box-shadow: 0 0 30px 0 var(--result-glow);
+  }
+
+  &.open,
+  &.apply,
+  &.cancel {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+
+    &::before {
+      animation: show-result-pop 0.45s ease-out both;
+    }
+  }
+
+  &.apply {
+    --result-color: #{$main-color};
+    --result-glow: rgba(105, 185, 157, 0.48);
+
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+    }
+  }
+
+  &.cancel {
+    --result-color: #{$error-color};
+    --result-glow: rgba(229, 112, 122, 0.45);
+
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 6l12 12M18 6L6 18'/%3E%3C/svg%3E");
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  .show-result-title {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 120%;
+    color: $titles-color;
+
+    @include tablet-screen {
+      & {
+        font-size: 26px;
+      }
+    }
+  }
+
+  > * {
+    margin: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  p,
+  span,
+  div,
+  small,
+  ul,
+  li {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $text-color;
+
+    @include tablet-screen {
+      & {
+        font-size: 14px;
+      }
+    }
+  }
+
+  button,
+  .show-result-button {
+    margin-top: 12px;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--result-color);
+    box-shadow: 0 0 30px 0 var(--result-glow);
+    cursor: pointer;
+    transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(1.08);
+      transform: scale(1.04);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $titles-color;
+      outline-offset: 2px;
+    }
+  }
+}

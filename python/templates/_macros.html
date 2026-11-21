@@ -1,0 +1,15 @@
+{% macro house_card(house) %}
+<article class="catalog-card">
+    <img class="catalog-card-image"
+         src="{{ url_for('static', filename='img/discover-section/' + house.image) }}"
+         alt="{{ house.title }}"
+         loading="lazy">
+    <h3 class="catalog-card-title">{{ house.title }}</h3>
+    <p class="catalog-card-description">{{ house.location }}</p>
+    <div class="catalog-money-area-group">
+        <p class="catalog-card-price">${{ house.price }}</p>
+        <p class="catalog-card-area">{{ house.area }}m<sup>2</sup> <span>Living Area</span></p>
+    </div>
+    <a class="catalog-card-button" href="{{ url_for('load_house_page', house_id=house.id) }}">Learn more</a>
+</article>
+{% endmacro %}

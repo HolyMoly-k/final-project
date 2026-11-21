@@ -240,6 +240,10 @@
 
     button {
       font-size: 24px;
+
+      &.hero-buy-button {
+        transform: scale(1);
+      }
     }
   }
 }
@@ -254,7 +258,8 @@
   transition: margin 0.3s ease-in-out;
 
   &.hero-form-rent {
-    margin-left: 109px;
+    // margin-left: 109px;
+    margin-left: 0px;
   }
 
   .hero-form-wrapper {
@@ -317,6 +322,11 @@
   .hero-form {
     flex-direction: row;
     width: 751px;
+
+    &.hero-form-rent
+    {
+      margin-left: 109px;
+    }
   }
 }
 
@@ -498,6 +508,9 @@
   .show-homes {
     max-width: min(90vw, 900px);
 
+    .list-show-homes {
+      overflow-y: visible;
+    }
     .list-show-homes li {
       width: 260px;
     }
@@ -509,15 +522,15 @@
   bottom: 5%;
   left: 50%;
   transform: translate(-50%, 280%);
-  background-color: rgba(144, 238, 199, 0.8);
+  background-color: rgba(238, 144, 152, 0.8);
   padding: 15px;
   border-radius: 50px;
   color: white;
   font-weight: 600;
-  border: 1px solid #5dc09d;
+  border: 1px solid #c05d6d;
   box-shadow:
-    0 20px 45px rgba(31, 39, 68, 0.18),
-    0 2px 10px rgba(31, 39, 68, 0.08);
+    0 20px 45px rgba(133, 59, 59, 0.8),
+    0 2px 10px rgb(127, 61, 61, 0.4);
   backdrop-filter: blur(14px);
   opacity: 0;
 

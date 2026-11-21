@@ -17,6 +17,7 @@ buttons.forEach((button) => {
 
           select.options[2].value = '3000+';
           select.options[2].text = '$3000+';
+          form.classList.add('hero-form-rent')
         }
         else {
           select.options[0].value = '20000-30000';
@@ -27,6 +28,7 @@ buttons.forEach((button) => {
 
           select.options[2].value = '40000+';
           select.options[2].text = '$40000+';
+          form.classList.remove('hero-form-rent')
         }
     })
 })

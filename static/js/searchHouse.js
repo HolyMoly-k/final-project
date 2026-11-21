@@ -29,16 +29,18 @@ heroForm.addEventListener('submit', function(event) {
         listShowHomes.innerHTML = ``
         if (houses.length > 0) {
             houses.forEach(house => {
+                if (house.title.length > 15) house.title = house.title.slice(0, 15) + '...';
+                if (house.location.length > 23) house.location = house.location.slice(0, 23) + '...';
                 listShowHomes.innerHTML += `
                     <li>
-                        <img src="./img/discover-section/${house.image}" alt="${house.title}" width="244" height="138">
+                        <img src="./static/img/discover-section/${house.image}" alt="${house.title}" width="244" height="138">
                         <h3 class="discover-list-item-title">${house.title}</h3>
                         <p class="discover-list-description">${house.location}</p>
                         <div class="discover-money-area-group">
                             <p class="discover-list-item-price">$${house.price}</p>
                             <p class="discover-list-item-area">${house.area}m<sup>2</sup> <span>Living Area</span></p>
                         </div>
-                        <a href="#" class="discover-list-item-button">Send inquiry</a>
+                        <a href="/catalog/house/${house.id}" class="discover-list-item-button">Send inquiry</a>
                     </li>
                 `
             })
