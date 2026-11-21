@@ -3,6 +3,9 @@ import os
 from config import PASSWORD_DB
 
 def connect_db():
+    url = os.getenv("DATABASE_URL")
+    if url:
+        return psycopg2.connect(url)
     return psycopg2.connect(
         dbname = "website_houses",
         user = "postgres",
